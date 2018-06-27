@@ -1,9 +1,11 @@
 package model.beans;
 
+import java.util.Date;
+
 public class Pessoa {
     private String nome;
     private String email;
-    private String CPF;
-    private int idade;// se precisar da data em si dps é só alterar para Date :D
+    private String cpf;
+    private Date idade;
 
 }
