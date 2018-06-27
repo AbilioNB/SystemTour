@@ -2,7 +2,7 @@ package model.beans;
 
 import java.util.Date;
 
-public class Viagens {
+public class Viagem {
     private String destino;
     private String origem;
     private String descricao;
