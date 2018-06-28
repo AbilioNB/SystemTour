@@ -13,16 +13,17 @@ Adiministradores:
 Cliente:
 	<ul>
 	<li>Criar cliente;</li>
-	<br>-Editar Cliente;
-	<br>-Excluir Cliente;
+	<li>-Editar Cliente;</li>
+	<li>-Excluir Cliente;</li>
 	</ul>
 
 <br>Gerencia Fincanceira:
-	<br>-Gerencia de pagamentos;
-	<br>-Análise de dados dos clientes;
-	
+	<ul>
+	<li>-Gerencia de pagamentos;</li>
+	<li>-Análise de dados dos clientes;</li>
+	</ul>
 <br>Viagens : 
-	<br>- Criação de Viagem; 
+	<>- Criação de Viagem; 
 	<br>- Gerar Pacote de viagem : 
 		<br>-Individual;
 		<br>-Família.
