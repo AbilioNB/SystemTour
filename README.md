@@ -33,9 +33,9 @@ Versão JAVA: Java 8
 Dependências: JavaFX
 
 Time de Desenvolvedores : 
--Abílio "abilioNB" Nogueira 
--Kelvin "kpoliveira" Pinheiro
--Gabriel "gvgabriellb" Vinicius {Arte}
+<br>-Abílio "abilioNB" Nogueira 
+<br>-Kelvin "kpoliveira" Pinheiro
+<br>-Gabriel "gvgabriellb" Vinicius {Arte}
 
 Orientador : 
--Andre Camara
+<br>-Andre Camara
