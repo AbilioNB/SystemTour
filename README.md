@@ -42,7 +42,8 @@ Cliente:
   
   
   
-Versão JAVA: Java 8
+Versão JAVA: 
+	<br> Java 8
 Dependências: 
 	<br>JavaFX
 
