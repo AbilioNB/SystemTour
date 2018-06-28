@@ -5,6 +5,7 @@ Definição: Baseado em um case real , foi idealizado  um escopo para um program
 O <b>Gerencia Tour</b> trata-se de um sistema que será utilizado pelos administradores da empresa onde eles poderão informatizar toda parte de controle de ativos , como os clientes , quanto a parte financeira. Ainda visando destaque em demais plataformas existentes, será implementado uma função que baseada nas recentes escolha  de destinos/pacotes dos clientes possam ser cotados para as viagens, assim sempre formando uma lista de possíveis clientes para aquele destino.
 
 
+
 Funções já idealizadas :
 
 Cliente:
@@ -30,3 +31,11 @@ Viagens :
   
 Versão JAVA: Java 8
 Dependências: JavaFX
+
+Time de Desenvolvedores : 
+-Abílio "abilioNB" Nogueira 
+-Kelvin "kpoliveira" Pinheiro
+-Gabriel "gvgabriellb" Vinicius {Arte}
+
+Orientador : 
+-Andre Camara
