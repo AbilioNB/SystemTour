@@ -4,14 +4,18 @@
 Definição: Baseado em um case real , foi idealizado  um escopo para um programa que visa gerenciar por parte de seus donos um micro-empresa de viagem .
 O <b>Gerencia Tour</b> trata-se de um sistema que será utilizado pelos administradores da empresa onde eles poderão informatizar toda parte de controle de ativos , como os clientes , quanto a parte financeira. Ainda visando destaque em demais plataformas existentes, será implementado uma função que baseada nas recentes escolha  de destinos/pacotes dos clientes possam ser cotados para as viagens, assim sempre formando uma lista de possíveis clientes para aquele destino.
 
+O sistema contará com uma interface gráfica onde os administradores ou gerentes possam ser autenticados e acessar todas as funções abaixo [as funções a baixo são apenas as estimativas que vão existir no sistema]:
 
-
-Funções já idealizadas :
-
+Adiministradores:
+		<ul>
+	<li>Criar Administrador;</li>
+		</ul>
 Cliente:
-	<br>-Criar cliente;
+	<ul>
+	<li>Criar cliente;</li>
 	<br>-Editar Cliente;
 	<br>-Excluir Cliente;
+	</ul>
 
 <br>Gerencia Fincanceira:
 	<br>-Gerencia de pagamentos;
