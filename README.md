@@ -13,25 +13,29 @@ Adiministradores:
 Cliente:
 	<ul>
 	<li>Criar cliente;</li>
-	<li>-Editar Cliente;</li>
-	<li>-Excluir Cliente;</li>
+	<li>Editar Cliente;</li>
+	<li>Excluir Cliente;</li>
 	</ul>
 
 <br>Gerencia Fincanceira:
 	<ul>
-	<li>-Gerencia de pagamentos;</li>
-	<li>-Análise de dados dos clientes;</li>
+	<li>Gerencia de pagamentos;</li>
+	<li>Análise de dados dos clientes;</li>
 	</ul>
 <br>Viagens : 
-	<>- Criação de Viagem; 
-	<br>- Gerar Pacote de viagem : 
-		<br>-Individual;
-		<br>-Família.
-	<br>-Listar despesas relacionadas a cada viagem;
-	<br>-Calcular  o valor unitário de gasto por cliente;
-	<br>-Estimar lucro baseado no custo do cliente;
+	<ul> 
+	<li>Criação de Viagem;</li> 
+	<li>Gerar Pacote de viagem : 
+		<ul>
+			<li>Individual;</li>
+			<li>Família.</li>
+		</ul>
+	</li>
+	<li>Listar despesas relacionadas a cada viagem;</li>
+	<li>-Calcular  o valor unitário de gasto por cliente;</li>
+	<li>-Estimar lucro baseado no custo do cliente;</li>
 
-  
+  </ul>
   
   
 Versão JAVA: Java 8
