@@ -32,8 +32,8 @@ Cliente:
 		</ul>
 	</li>
 	<li>Listar despesas relacionadas a cada viagem;</li>
-	<li>-Calcular  o valor unitário de gasto por cliente;</li>
-	<li>-Estimar lucro baseado no custo do cliente;</li>
+	<li>Calcular  o valor unitário de gasto por cliente;</li>
+	<li>Estimar lucro baseado no custo do cliente;</li>
 
   </ul>
   
@@ -43,9 +43,10 @@ Dependências:
 	<br>-JavaFX
 
 Time de Desenvolvedores : 
-<br>-Abílio "abilioNB" Nogueira 
-<br>-Kelvin "kpoliveira" Pinheiro
-<br>-Gabriel "gvgabriellb" Vinicius 
-
+	<ul>
+	<li>Abílio "abilioNB" Nogueira</li> 
+	<li>Kelvin "kpoliveira" Pinheiro</li>
+	<li>Gabriel "gvgabriellb" Vinicius</li> 
+	</ul>
 Orientador : 
-<br>-Andre Camara
+<br>Andre Camara
