@@ -9,28 +9,29 @@ O <b>Gerencia Tour</b> trata-se de um sistema que será utilizado pelos administ
 Funções já idealizadas :
 
 Cliente:
-	-Criar cliente;
-	-Editar Cliente;
-	-Excluir Cliente;
+	<br>-Criar cliente;
+	<br>-Editar Cliente;
+	<br>-Excluir Cliente;
 
-Gerencia Fincanceira:
-	-Gerencia de pagamentos;
-	-Análise de dados dos clientes;
+<br>Gerencia Fincanceira:
+	<br>-Gerencia de pagamentos;
+	<br>-Análise de dados dos clientes;
 	
-Viagens : 
-	- Criação de Viagem; 
-	- Gerar Pacote de viagem : 
-		-Individual;
-		-Família.
-	-Listar despesas relacionadas a cada viagem;
-	-Calcular  o valor unitário de gasto por cliente;
-	-Estimar lucro baseado no custo do cliente;
+<br>Viagens : 
+	<br>- Criação de Viagem; 
+	<br>- Gerar Pacote de viagem : 
+		<br>-Individual;
+		<br>-Família.
+	<br>-Listar despesas relacionadas a cada viagem;
+	<br>-Calcular  o valor unitário de gasto por cliente;
+	<br>-Estimar lucro baseado no custo do cliente;
 
   
   
   
 Versão JAVA: Java 8
-Dependências: JavaFX
+Dependências: 
+	<br>-JavaFX
 
 Time de Desenvolvedores : 
 <br>-Abílio "abilioNB" Nogueira 
