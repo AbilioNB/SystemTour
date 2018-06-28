@@ -36,7 +36,7 @@ Dependências:
 Time de Desenvolvedores : 
 <br>-Abílio "abilioNB" Nogueira 
 <br>-Kelvin "kpoliveira" Pinheiro
-<br>-Gabriel "gvgabriellb" Vinicius {Arte}
+<br>-Gabriel "gvgabriellb" Vinicius 
 
 Orientador : 
 <br>-Andre Camara
