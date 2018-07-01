@@ -37,13 +37,16 @@ Cliente:
 
   </ul>
   
+   <br>Diagrama de Classes{V1}:
+  ![package beans](https://user-images.githubusercontent.com/21352623/42130078-94124234-7cae-11e8-8546-70f022d8afa9.png)
+  
+  
    Arquitetura Parcial{V1}:
   ![diagrama em branco](https://user-images.githubusercontent.com/21352623/42009151-6e94a73c-7a5f-11e8-9d5e-6d07409be0b0.png)
   <br>
   
   
-  <br>Diagrama de Classes{V1}:
-  ![package beans](https://user-images.githubusercontent.com/21352623/42130078-94124234-7cae-11e8-8546-70f022d8afa9.png)
+ 
   
 Versão JAVA: 
 	<br> Java 8
