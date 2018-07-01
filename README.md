@@ -1,4 +1,4 @@
-
+﻿
 [Gerencia Tour 1]
 
 Definição: Baseado em um case real , foi idealizado  um escopo para um programa que visa gerenciar por parte de seus donos um micro-empresa de viagem .
@@ -52,7 +52,7 @@ Cliente:
 Versão JAVA: 
 	<br> Java 8
 <br>Dependências: 
-	<br>JavaFX
+	<br>Java Swing
 
 Time de Desenvolvedores : 
 	<ul>
