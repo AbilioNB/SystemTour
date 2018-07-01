@@ -7,5 +7,6 @@ public class Pessoa {
     private String email;
     private String cpf;
     private Date idade;
+    private String telefone;
 
 }
