@@ -38,6 +38,7 @@ Cliente:
   </ul>
   
    <br>Diagrama de Classes{V1}:
+   <br>
   ![package beans](https://user-images.githubusercontent.com/21352623/42130078-94124234-7cae-11e8-8546-70f022d8afa9.png)
   
   
