@@ -52,7 +52,7 @@ Cliente:
 Versão JAVA: 
 	<br> Java 8
 <br>Dependências: 
-	<br>Java Swing
+	<br>Java Fx
 
 Time de Desenvolvedores : 
 	<ul>
