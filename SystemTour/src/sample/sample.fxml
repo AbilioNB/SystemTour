@@ -30,8 +30,8 @@
                      <font>
                         <Font size="14.0" />
                      </font></Label>
-                  <PasswordField alignment="CENTER_RIGHT" layoutX="59.0" layoutY="43.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="221.0" />
-                  <TextField layoutX="59.0" layoutY="80.0" prefHeight="25.0" prefWidth="221.0" />
+                  <PasswordField alignment="CENTER_RIGHT" layoutX="59.0" layoutY="80.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="221.0" />
+                  <TextField layoutX="59.0" layoutY="44.0" prefHeight="25.0" prefWidth="221.0" />
                </children>
             </Pane>
             <Label layoutX="64.0" layoutY="29.0" text="Tela de Login" textAlignment="CENTER">
