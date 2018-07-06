@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MenuController">
    <children>
       <Pane prefHeight="267.0" prefWidth="401.0">
          <children>
-            <Button layoutX="138.0" layoutY="109.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="127.0" text="Cadastrar Clente">
+            <Button layoutX="138.0" layoutY="109.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="39.0" prefWidth="127.0" text="Cadastrar Clente">
                <font>
                   <Font size="9.0" />
                </font>
