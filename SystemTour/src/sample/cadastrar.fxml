@@ -20,7 +20,7 @@
                <children>
                   <Label contentDisplay="RIGHT" layoutX="105.0" layoutY="2.0" prefHeight="25.0" prefWidth="210.0" text="Nome:">
                      <graphic>
-                        <TextField prefHeight="25.0" prefWidth="119.0"  />
+                        <TextField prefHeight="25.0" prefWidth="119.0" fx:id="campoNome"/>
                      </graphic></Label>
                   <Label contentDisplay="RIGHT" layoutX="105.0" layoutY="35.0" prefHeight="25.0" prefWidth="188.0" text="Email:">
                      <graphic>
