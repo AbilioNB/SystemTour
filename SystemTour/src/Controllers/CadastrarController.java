@@ -9,5 +9,7 @@ public class CadastrarController {
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
         System.out.println("Menu");
         Main.trocaTela("Entrar");
+
+
     }
 }
