@@ -1,24 +1,21 @@
 package Controllers;
 
-
+import javafx.scene.control.TextField;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.beans.Cliente;
 import sample.Main;
-
-
 public class CadastrarController{
-
     @FXML
     private TextField nomeCadastro, emailCadastro, cpfCadastro, idadeCadastro, telefoneCadastro;
     private boolean valorEmail, valorCPF;
-
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
         System.out.println("Menu");
         Main.trocaTela("Entrar");
-
+  
+    }
         String nome = nomeCadastro.getText();
         String email = emailCadastro.getText();
         String cpf = cpfCadastro.getText();
@@ -53,3 +50,4 @@ public class CadastrarController{
         Main.CadastrarCliente(nome,email,cpf,idade,telefone);
     }
 }
+
