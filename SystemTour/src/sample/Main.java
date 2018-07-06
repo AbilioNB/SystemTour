@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Date;
+
 public class Main extends Application {
     private static Stage stage;
     private static Scene loginScane;
@@ -35,6 +37,10 @@ public class Main extends Application {
                 stage.setScene(cadastroScane);
                 break;
         }
+    }
+
+    public static void CadastrarCliente(String nome, String email, String cpf, String idade, String telefone){
+
     }
 
 
