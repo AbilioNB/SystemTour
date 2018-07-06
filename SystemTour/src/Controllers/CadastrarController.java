@@ -19,11 +19,9 @@ public class CadastrarController {
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
         System.out.println("Menu");
         Main.trocaTela("Entrar");
-        String nome = campoNome.getText();
-        System.out.println(nome);
+  
     }
-   /* //receer dados
-     String nome = campoNome.getText();*/
+
 
 
 
