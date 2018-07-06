@@ -19,24 +19,24 @@
             <Pane layoutY="51.0" prefHeight="215.0" prefWidth="380.0">
                <children>
                   <Label contentDisplay="RIGHT" layoutX="105.0" layoutY="2.0" prefHeight="25.0" prefWidth="210.0" text="Nome:">
-                     <graphic>
-                        <TextField prefHeight="25.0" prefWidth="119.0" fx:id="campoNome"/>
+                     <graphic>                       
+                        <TextField fx:id="nomeCadastro" prefHeight="25.0" prefWidth="119.0" />
                      </graphic></Label>
                   <Label contentDisplay="RIGHT" layoutX="105.0" layoutY="35.0" prefHeight="25.0" prefWidth="188.0" text="Email:">
                      <graphic>
-                        <TextField prefHeight="25.0" prefWidth="125.0" />
+                        <TextField fx:id="emailCadastro" prefHeight="25.0" prefWidth="125.0" />
                      </graphic></Label>
                   <Label contentDisplay="RIGHT" layoutX="103.0" layoutY="68.0" prefHeight="25.0" prefWidth="170.0" text="CPF:">
                      <graphic>
-                        <TextField prefHeight="25.0" prefWidth="137.0" />
+                        <TextField fx:id="cpfCadastro" prefHeight="25.0" prefWidth="137.0" />
                      </graphic></Label>
                   <Label contentDisplay="RIGHT" layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="188.0" text="Idade:">
                      <graphic>
-                        <TextField prefHeight="25.0" prefWidth="130.0" />
+                        <TextField fx:id="idadeCadastro" prefHeight="25.0" prefWidth="130.0" />
                      </graphic></Label>
                   <Label contentDisplay="RIGHT" layoutX="99.0" layoutY="135.0" text="Telefone:">
                      <graphic>
-                        <TextField prefHeight="25.0" prefWidth="118.0" />
+                        <TextField fx:id="telefoneCadastro" prefHeight="25.0" prefWidth="118.0" />
                      </graphic></Label>
                   <Button layoutX="173.0" layoutY="176.0" mnemonicParsing="false" onAction="#buttonAction" text="Cadastrar" />
                </children></Pane>
