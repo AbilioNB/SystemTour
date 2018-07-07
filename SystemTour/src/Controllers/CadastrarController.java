@@ -12,7 +12,7 @@ public class CadastrarController{
 
     @FXML
     private TextField nomeCadastro, emailCadastro, cpfCadastro, idadeCadastro, telefoneCadastro;
-    private boolean valorEmail, valorCPF;
+    private boolean valorEmail, valorCPF, valorTel;
 
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
@@ -33,9 +33,15 @@ public class CadastrarController{
             dialogoInfo.setContentText("Tente informar um e-mail que funcione desta vez, okay? :D");
             dialogoInfo.showAndWait();
         }
-
+        valorTel = Cliente.validarTel(telefone);
+        if (valorTel != true){
+            Alert info = new Alert(Alert.AlertType.ERROR);
+            info.setTitle("Telefone Invalido!");
+            info.setHeaderText("Você digitou um telefone invalido!");
+            info.setContentText("Tente informar um telefone neste formato: (XX)XXXXX-XXXX");
+            info.showAndWait();
+        }
         valorCPF = Cliente.validarCPF(cpf);
-
         if(valorCPF == true){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Cadastrado!");

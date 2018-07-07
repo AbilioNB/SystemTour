@@ -66,4 +66,12 @@ public class Cliente extends Pessoa {
                 return(false);
             }
         }
+        public static Boolean validarTel(String tel){
+            Boolean info = true;
+            if((tel == null) || (tel.length()!=14)){
+                System.out.println("funcionou");
+                info = false;
+            }else {info = true;}
+            return info;
+        }
     }
