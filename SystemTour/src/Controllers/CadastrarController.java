@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import model.beans.Cliente;
+import model.persistence.ClienteDAO;
 import sample.Main;
 
 
@@ -41,14 +42,9 @@ public class CadastrarController{
             info.setContentText("Tente informar um telefone neste formato: (XX)XXXXX-XXXX");
             info.showAndWait();
         }
+
         valorCPF = Cliente.validarCPF(cpf);
-        if(valorCPF == true){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Cadastrado!");
-            alert.setHeaderText(null);
-            alert.setContentText("O cliente foi cadastrado com sucesso!");
-            alert.showAndWait();
-        }else{
+        if(valorCPF != true){
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("CPF errado!");
             dialogoInfo.setHeaderText("Provavelmente você digitou seu CPF errado");
@@ -56,6 +52,13 @@ public class CadastrarController{
             dialogoInfo.showAndWait();
         }
 
-        Main.CadastrarCliente(nome,email,cpf,idade,telefone);
+        if(valorCPF == true && valorTel == true && valorEmail == true){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Cadastrado!");
+            alert.setHeaderText(null);
+            alert.setContentText("O cliente foi cadastrado com sucesso!");
+            alert.showAndWait();
+            Main.CadastrarCliente(nome, email, cpf, idade, telefone);
+        }
     }
 }
