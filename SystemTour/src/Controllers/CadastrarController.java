@@ -13,21 +13,20 @@ public class CadastrarController{
 
     @FXML
     private TextField nomeCadastro, emailCadastro, cpfCadastro, idadeCadastro, telefoneCadastro;
-    private boolean valorEmail, valorCPF, valorTel, valorIdade = true;
+    private boolean valorEmail, valorCPF, valorTel;
 
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
         System.out.println("Menu");
         Main.trocaTela("Entrar");
 
-        Cliente buffer = new Cliente();
+        String nome = nomeCadastro.getText();
+        String email = emailCadastro.getText();
+        String cpf = cpfCadastro.getText();
+        String idade = idadeCadastro.getText();
+        String telefone = telefoneCadastro.getText();
 
-        buffer.setNome(nomeCadastro.getText());
-        buffer.setEmail(emailCadastro.getText());
-        buffer.setCpf(cpfCadastro.getText());
-        buffer.setTelefone(telefoneCadastro.getText());
-
-        valorEmail = Cliente.validarEmail(buffer.getEmail());
+        valorEmail = Cliente.validarEmail(email);
         if(valorEmail != true){
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("E-mail errado!");
@@ -35,7 +34,7 @@ public class CadastrarController{
             dialogoInfo.setContentText("Tente informar um e-mail que funcione desta vez, okay? :D");
             dialogoInfo.showAndWait();
         }
-        valorTel = Cliente.validarTel(buffer.getTelefone());
+        valorTel = Cliente.validarTel(telefone);
         if (valorTel != true){
             Alert info = new Alert(Alert.AlertType.ERROR);
             info.setTitle("Telefone Invalido!");
@@ -44,7 +43,7 @@ public class CadastrarController{
             info.showAndWait();
         }
 
-        valorCPF = Cliente.validarCPF(buffer.getCpf());
+        valorCPF = Cliente.validarCPF(cpf);
         if(valorCPF != true){
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("CPF errado!");
@@ -53,22 +52,13 @@ public class CadastrarController{
             dialogoInfo.showAndWait();
         }
 
-        if(valorCPF == true && valorTel == true && valorEmail == true && valorIdade == true){
+        if(valorCPF == true && valorTel == true && valorEmail == true){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Cadastrado!");
             alert.setHeaderText(null);
             alert.setContentText("O cliente foi cadastrado com sucesso!");
-            ClienteDAO.salvarCliente(buffer);
             alert.showAndWait();
-
-////////////////////////////////////////////////////////////////
-/////////ARRUMAR A QUESTÃO DA DATA!!!!!!!!/////////////////////
-//////////////////////////////////////////////////////////////
-
-            nomeCadastro.clear();
-            emailCadastro.clear();
-            cpfCadastro.clear();
-            telefoneCadastro.clear();
+            Main.CadastrarCliente(nome, email, cpf, idade, telefone);
         }
     }
 }
