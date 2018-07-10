@@ -76,4 +76,8 @@ public class Cliente extends Pessoa {
             }
         return info;
         }
+<<<<<<< HEAD
     }
+=======
+    }
+>>>>>>> parent of d43b497... validação do telefone

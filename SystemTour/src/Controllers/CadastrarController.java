@@ -13,7 +13,7 @@ public class CadastrarController{
 
     @FXML
     private TextField nomeCadastro, emailCadastro, cpfCadastro, idadeCadastro, telefoneCadastro;
-    private boolean valorEmail, valorCPF, valorTel;
+    private boolean valorEmail, valorCPF;
 
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
@@ -34,6 +34,7 @@ public class CadastrarController{
             dialogoInfo.setContentText("Tente informar um e-mail que funcione desta vez, okay? :D");
             dialogoInfo.showAndWait();
         }
+<<<<<<< HEAD
         valorTel = Cliente.validarTel(telefone);
         if (valorTel != true){
             Alert info = new Alert(Alert.AlertType.ERROR);
@@ -45,6 +46,18 @@ public class CadastrarController{
 
         valorCPF = Cliente.validarCPF(cpf);
         if(valorCPF != true){
+=======
+
+        valorCPF = Cliente.validarCPF(cpf);
+
+        if(valorCPF == true){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Cadastrado!");
+            alert.setHeaderText(null);
+            alert.setContentText("O cliente foi cadastrado com sucesso!");
+            alert.showAndWait();
+        }else{
+>>>>>>> parent of d43b497... validação do telefone
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("CPF errado!");
             dialogoInfo.setHeaderText("Provavelmente você digitou seu CPF errado");
