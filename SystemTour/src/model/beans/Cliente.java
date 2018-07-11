@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class Cliente extends Pessoa {
 
-    ArrayList<Viagem> viagensFeitas = new ArrayList ();
+    ArrayList<Viagem> viagensFeitas = new ArrayList();
 
-    public static Boolean validarEmail(String email){
+    public static Boolean validarEmail(String email) {
 
         Boolean resp = true;
 
-        int i= email.indexOf("@");
-        if(i<0){
-            resp=false;
+        int i = email.indexOf("@");
+        if (i < 0) {
+            resp = false;
         }
         return resp;
     }
@@ -66,18 +66,14 @@ public class Cliente extends Pessoa {
         }
     }
 
-    public static Boolean validarTel(String tel){
+    public static Boolean validarTel(String tel) {
         Boolean info = true;
-        if((tel == null) || (tel.length()!=14)){
+        if ((tel == null) || (tel.length() != 14)) {
             System.out.println("funcionou");
             info = false;
-            }else{
+        } else {
             info = true;
-            }
-        return info;
         }
-<<<<<<< HEAD
+        return info;
     }
-=======
-    }
->>>>>>> parent of d43b497... validação do telefone
+}

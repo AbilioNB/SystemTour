@@ -13,29 +13,29 @@ public class CadastrarController{
 
     @FXML
     private TextField nomeCadastro, emailCadastro, cpfCadastro, idadeCadastro, telefoneCadastro;
-    private boolean valorEmail, valorCPF;
+    private boolean valorEmail, valorCPF, valorTel, valorIdade = true;
 
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) {
         System.out.println("Menu");
         Main.trocaTela("Entrar");
 
-        String nome = nomeCadastro.getText();
-        String email = emailCadastro.getText();
-        String cpf = cpfCadastro.getText();
-        String idade = idadeCadastro.getText();
-        String telefone = telefoneCadastro.getText();
+        Cliente buffer = new Cliente();
 
-        valorEmail = Cliente.validarEmail(email);
+        buffer.setNome(nomeCadastro.getText());
+        buffer.setEmail(emailCadastro.getText());
+        buffer.setCpf(cpfCadastro.getText());
+        buffer.setTelefone(telefoneCadastro.getText());
+
+        valorEmail = Cliente.validarEmail(buffer.getEmail());
         if(valorEmail != true){
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("E-mail errado!");
             dialogoInfo.setHeaderText("Provavelmente você digitou seu e-mail errado");
-            dialogoInfo.setContentText("Tente informar um e-mail que funcione desta vez, okay? :D");
+            dialogoInfo.setContentText("Tente informar um e-mail que funcione desta vez, okay? ");
             dialogoInfo.showAndWait();
         }
-<<<<<<< HEAD
-        valorTel = Cliente.validarTel(telefone);
+        valorTel = Cliente.validarTel(buffer.getTelefone());
         if (valorTel != true){
             Alert info = new Alert(Alert.AlertType.ERROR);
             info.setTitle("Telefone Invalido!");
@@ -44,34 +44,31 @@ public class CadastrarController{
             info.showAndWait();
         }
 
-        valorCPF = Cliente.validarCPF(cpf);
+        valorCPF = Cliente.validarCPF(buffer.getCpf());
         if(valorCPF != true){
-=======
-
-        valorCPF = Cliente.validarCPF(cpf);
-
-        if(valorCPF == true){
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Cadastrado!");
-            alert.setHeaderText(null);
-            alert.setContentText("O cliente foi cadastrado com sucesso!");
-            alert.showAndWait();
-        }else{
->>>>>>> parent of d43b497... validação do telefone
             Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
             dialogoInfo.setTitle("CPF errado!");
             dialogoInfo.setHeaderText("Provavelmente você digitou seu CPF errado");
-            dialogoInfo.setContentText("Tente informar um CPF que funcione desta vez, okay? :D");
+            dialogoInfo.setContentText("Tente informar um CPF que funcione desta vez, okay? ");
             dialogoInfo.showAndWait();
         }
 
-        if(valorCPF == true && valorTel == true && valorEmail == true){
+        if(valorCPF == true && valorTel == true && valorEmail == true && valorIdade == true){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Cadastrado!");
             alert.setHeaderText(null);
             alert.setContentText("O cliente foi cadastrado com sucesso!");
+            ClienteDAO.salvarCliente(buffer);
             alert.showAndWait();
-            Main.CadastrarCliente(nome, email, cpf, idade, telefone);
+
+////////////////////////////////////////////////////////////////
+/////////ARRUMAR A QUESTÃO DA DATA!!!!!!!!/////////////////////
+//////////////////////////////////////////////////////////////
+
+            nomeCadastro.clear();
+            emailCadastro.clear();
+            cpfCadastro.clear();
+            telefoneCadastro.clear();
         }
     }
 }
