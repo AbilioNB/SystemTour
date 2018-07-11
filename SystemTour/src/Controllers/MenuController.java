@@ -10,4 +10,9 @@ public class MenuController  {
         System.out.println("Cadastrando");
         Main.trocaTela("Cadastrar");
     }
+    @FXML
+    protected void buttonExibir (javafx.event.ActionEvent actionEvent){
+        System.out.println("Exibindo Clientes");
+        Main.trocaTela("Exibir");
+    }
 }
