@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SystemTour:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SystemTour_jar</output-path>
+    <root id="archive" name="SystemTour.jar">
+      <element id="module-output" name="SystemTour" />
+    </root>
+  </artifact>
+</component>

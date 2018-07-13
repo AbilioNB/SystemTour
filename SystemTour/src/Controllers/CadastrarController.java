@@ -61,13 +61,10 @@ public class CadastrarController{
             ClienteDAO.salvarCliente(buffer);
             alert.showAndWait();
 
-////////////////////////////////////////////////////////////////
-/////////ARRUMAR A QUESTÃO DA DATA!!!!!!!!/////////////////////
-//////////////////////////////////////////////////////////////
-
             nomeCadastro.clear();
             emailCadastro.clear();
             cpfCadastro.clear();
+            idadeCadastro.clear();
             telefoneCadastro.clear();
         }
     }

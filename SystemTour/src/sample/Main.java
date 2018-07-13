@@ -44,11 +44,6 @@ public class Main extends Application {
         }
     }
 
-    public static void CadastrarCliente(String nome, String email, String cpf, String idade, String telefone){
-
-    }
-
-
     public static void main(String[] args) {
         launch(args);
     }
