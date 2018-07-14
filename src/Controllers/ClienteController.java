@@ -18,16 +18,10 @@ public class ClienteController {
         Boolean ret = false;
 
         valorEmail = cb.validarEmail(buffer.getEmail());
-        if(valorEmail != true){
-            cv.mensagemErro();
-        }
         valorTel = cb.validarTel(buffer.getTelefone());
-        if (valorTel != true){
-            cv.mensagemErro();
-        }
-
         valorCPF = cb.validarCPF(buffer.getCpf());
-        if(valorCPF != true){
+
+        if(valorEmail != true || valorTel != true ||valorCPF != true){
             cv.mensagemErro();
         }
 
