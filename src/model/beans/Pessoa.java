@@ -1,13 +1,21 @@
 package model.beans;
 
-import java.util.Date;
-
 public class Pessoa {
     private String nome;
     private String email;
     private String cpf;
-    private Date idade;
+    private int idade;
+    private String data;
     private String telefone;
+
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
 
     public String getNome() {
         return nome;
@@ -19,10 +27,6 @@ public class Pessoa {
 
     public String getCpf() {
         return cpf;
-    }
-
-    public Date getIdade() {
-        return idade;
     }
 
     public String getTelefone() {
@@ -41,7 +45,11 @@ public class Pessoa {
         this.cpf = cpf;
     }
 
-    public void setIdade(Date idade) {
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
         this.idade = idade;
     }
 

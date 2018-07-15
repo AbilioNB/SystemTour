@@ -1,5 +1,9 @@
 package business;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class ClienteBusiness {
 
     public Boolean validarEmail(String email) {
@@ -61,12 +65,27 @@ public class ClienteBusiness {
     }
 
     public Boolean validarTel(String tel) {
-        Boolean info = true;
+
+        Boolean info;
         if ((tel == null) || (tel.length() != 14)) {
-            System.out.println("funcionou");
             info = false;
         } else {
             info = true;
+        }
+        return info;
+    }
+
+    public Boolean validarIdade(String data){
+
+        Boolean info = true;
+
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+
+        try {
+            Date dataPronta = formato.parse(data);
+        } catch (ParseException e) {
+            info = false;
+            System.out.println(data);
         }
         return info;
     }

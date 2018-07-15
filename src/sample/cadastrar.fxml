@@ -30,15 +30,13 @@
                      <graphic>
                         <TextField fx:id="cpfCadastro" prefHeight="25.0" prefWidth="137.0" />
                      </graphic></Label>
-                  <Label contentDisplay="RIGHT" layoutX="102.0" layoutY="101.0" prefHeight="25.0" prefWidth="188.0" text="Idade:">
-                     <graphic>
-                        <TextField fx:id="idadeCadastro" prefHeight="25.0" prefWidth="130.0" />
-                     </graphic></Label>
+                  <Label contentDisplay="RIGHT" layoutX="79.0" layoutY="104.0" prefHeight="25.0" prefWidth="188.0" text="Nascimento:" />
                   <Label contentDisplay="RIGHT" layoutX="99.0" layoutY="135.0" text="Telefone:">
                      <graphic>
                         <TextField fx:id="telefoneCadastro" prefHeight="25.0" prefWidth="118.0" />
                      </graphic></Label>
                   <Button layoutX="173.0" layoutY="176.0" mnemonicParsing="false" onAction="#buttonAction" text="Cadastrar" />
+                  <TextField fx:id="dataCadastro" layoutX="153.0" layoutY="104.0" prefHeight="25.0" prefWidth="116.0" />
                </children></Pane>
          </children></Pane>
    </children>

@@ -9,7 +9,7 @@ public class ClienteView {
         Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
         dialogoInfo.setTitle("Informação errada!");
         dialogoInfo.setHeaderText("Provavelmente você digitou alguma informação errada, cheque os itens a seguir:");
-        dialogoInfo.setContentText("E-mail, CPF, Telefone");
+        dialogoInfo.setContentText("E-mail, CPF {000.000.000-00}, Telefone {(00)99999-9999}, Data de Nascimento {DD/MM/AAAA}");
         dialogoInfo.showAndWait();
     }
 
