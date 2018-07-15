@@ -14,6 +14,7 @@ public class Main extends Application {
     private static Scene menuScane;
     private static Scene cadastroScane;
     private static Scene exibirScane;
+    private static Scene cadAdmScene;
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -27,6 +28,8 @@ public class Main extends Application {
         cadastroScane = new Scene(fxmlCadastro, 400, 300);
         Parent fxmlExibir = FXMLLoader.load(getClass().getResource("exibirClientes.fxml"));
         exibirScane = new Scene(fxmlExibir, 300, 400);
+        Parent fxmlCadAdm = FXMLLoader.load(getClass().getResource("cadAdm.fxml"));
+        cadAdmScene = new Scene(fxmlCadAdm);
 
         primaryStage.setScene(loginScane);
         primaryStage.show();
@@ -41,6 +44,10 @@ public class Main extends Application {
                 break;
             case "Exibir":
                 stage.setScene(exibirScane);
+                break;
+            case "ADM":
+                stage.setScene(cadAdmScene);
+                break;
         }
     }
 
