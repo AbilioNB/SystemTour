@@ -1,7 +1,6 @@
 package Controllers;
 
 import business.ClienteBusiness;
-import javafx.scene.control.Alert;
 import model.beans.Cliente;
 import model.persistence.ClienteDAO;
 import view.ClienteView;
