@@ -31,6 +31,7 @@ public class CadastrarController{
 
         retorno = cc.cadastrarCliente(buffer);
 
+
         if(retorno == true){
 
             nomeCadastro.clear();

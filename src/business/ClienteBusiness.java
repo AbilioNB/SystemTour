@@ -79,13 +79,12 @@ public class ClienteBusiness {
 
         Boolean info = true;
 
-        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 
         try {
             Date dataPronta = formato.parse(data);
         } catch (ParseException e) {
             info = false;
-            System.out.println(data);
         }
         return info;
     }
