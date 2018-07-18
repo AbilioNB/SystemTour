@@ -21,7 +21,6 @@ public class CadastrarController{
         Cliente buffer = new Cliente();
 
         ClienteController cc = new ClienteController();
-        ClienteBusiness cb = new ClienteBusiness();
 
         buffer.setNome(nomeCadastro.getText());
         buffer.setEmail(emailCadastro.getText());

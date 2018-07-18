@@ -1,10 +1,14 @@
 package sample;
 
+import Controllers.AdministradorController;
+import Controllers.CadAdmController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.beans.Administrador;
+import model.persistence.AdminDAO;
 
 import java.util.Date;
 
@@ -33,6 +37,10 @@ public class Main extends Application {
 
         primaryStage.setScene(loginScane);
         primaryStage.show();
+
+        CadAdmController cadastroRoot = new CadAdmController();
+        cadastroRoot.rootADMCADASTRO();
+
     }
     public static void trocaTela(String tela){
         switch (tela){

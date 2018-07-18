@@ -24,7 +24,7 @@ public class AdministradorView {
     public void mensagemErroLogin(){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Login errado");
-        alert.setHeaderText("Seu Login já está sendo usado por outro usuário");
+        alert.setHeaderText("Seu Login já está sendo usado por outro usuário ou está errado");
         alert.setContentText("Insira outro");
         alert.showAndWait();
     }

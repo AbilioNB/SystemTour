@@ -1,10 +1,17 @@
 package business;
 
+import model.beans.Administrador;
+import model.persistence.AdminDAO;
+
+import javax.swing.text.StyledEditorKit;
+import java.awt.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AdministradorBusiness {
+
+    AdminDAO add = new AdminDAO();
 
     public Boolean validarLogin(String login){
         return true;
@@ -89,4 +96,15 @@ public class AdministradorBusiness {
         return info;
     }
 
+    public Boolean validarRoot(Administrador admRoot){
+        Boolean info = true;
+
+        if(admRoot.getLogin() == "admin"){
+            info = true;
+        }
+        if(admRoot.getLogin() == null){
+            info = false;
+        }
+        return info;
+    }
 }

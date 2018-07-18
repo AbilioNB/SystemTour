@@ -22,6 +22,8 @@ public class AdministradorController {
         valorTel = ab.validarTel(buffer.getTelefone());
         valorData = ab.validarData(buffer.getData());
 
+
+        //TODO Validação de Login
         //if(valorLogin != true){
         //    av.mensagemErroLogin();
         //}
@@ -31,9 +33,15 @@ public class AdministradorController {
         }
 
         if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
-            av.mensagemCadastro();
-            AdminDAO.salvarCliente(buffer);
-            retorno = true;
+
+            if(buffer.getLogin() == "admin"){
+                AdminDAO.salvarAdmin(buffer);
+            }else{
+                av.mensagemCadastro();
+                AdminDAO.salvarAdmin(buffer);
+                retorno = true;
+            }
+
         }
     return retorno;
     }
