@@ -2,6 +2,7 @@ package Controllers;
 
 import business.AdministradorBusiness;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import sample.Main;
 import view.AdministradorView;
@@ -10,6 +11,7 @@ public class LoginController {
 
     @FXML
     private TextField admROOT, senhaROOT;
+    private Button btnLogin;
     private Boolean retorno;
 
     @FXML

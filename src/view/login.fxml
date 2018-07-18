@@ -38,7 +38,7 @@
                <font>
                   <Font size="30.0" />
                </font></Label>
-            <Button layoutX="125.0" layoutY="193.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="17.0" prefWidth="56.0" text="Entrar" />
+            <Button fx:id="btnLogin" layoutX="125.0" layoutY="193.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="17.0" prefWidth="56.0" text="Entrar" />
          </children>
       </Pane>
    </children>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controllers.CadViagensController">
+  <children>
+    <Label layoutX="206.0" layoutY="14.0" text="Cadastrar Viagem">
+      <font>
+        <Font size="24.0" />
+      </font>
+    </Label>
+    <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="87.0" text="Origem:" textOverrun="ELLIPSIS">
+      <graphic>
+        <TextField prefWidth="200.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="32.0" layoutY="156.0" text="Destino:">
+      <graphic>
+        <TextField prefWidth="200.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="33.0" layoutY="225.0" text="Descrição:">
+      <graphic>
+        <TextField prefWidth="200.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="33.0" layoutY="282.0" text="Vagas:">
+      <graphic>
+        <TextField prefWidth="200.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="315.0" layoutY="87.0" text="Data de Partida:">
+      <graphic>
+        <TextField prefWidth="166.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="315.0" layoutY="156.0" text="Data de Chegada:">
+      <graphic>
+        <TextField prefWidth="176.0" />
+      </graphic>
+    </Label>
+    <Label layoutX="315.0" layoutY="225.0" text="Valor:">
+      <graphic>
+        <TextField prefWidth="188.0" />
+      </graphic>
+    </Label>
+    <Button layoutX="24.0" layoutY="343.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Voltar" />
+    <Button layoutX="491.0" layoutY="343.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Enviar" />
+  </children>
+</AnchorPane>

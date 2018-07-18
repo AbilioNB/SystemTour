@@ -1,16 +1,11 @@
 package sample;
 
-import Controllers.AdministradorController;
 import Controllers.CadAdmController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.beans.Administrador;
-import model.persistence.AdminDAO;
-
-import java.util.Date;
 
 public class Main extends Application {
     private static Stage stage;
@@ -24,15 +19,15 @@ public class Main extends Application {
         stage = primaryStage;
         primaryStage.setTitle("Gerencia Tour");
 
-        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
         loginScane = new Scene(fxmlLogin, 300, 275);
-        Parent fxmlMenu = FXMLLoader.load(getClass().getResource("menu.fxml"));
+        Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/menu.fxml"));
         menuScane = new Scene(fxmlMenu, 400, 300);
-        Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("cadastrar.fxml"));
+        Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("../view/cadastrar.fxml"));
         cadastroScane = new Scene(fxmlCadastro, 400, 300);
-        Parent fxmlExibir = FXMLLoader.load(getClass().getResource("exibirClientes.fxml"));
+        Parent fxmlExibir = FXMLLoader.load(getClass().getResource("../view/exibirClientes.fxml"));
         exibirScane = new Scene(fxmlExibir, 300, 400);
-        Parent fxmlCadAdm = FXMLLoader.load(getClass().getResource("cadAdm.fxml"));
+        Parent fxmlCadAdm = FXMLLoader.load(getClass().getResource("../view/cadAdm.fxml"));
         cadAdmScene = new Scene(fxmlCadAdm);
 
         primaryStage.setScene(loginScane);
