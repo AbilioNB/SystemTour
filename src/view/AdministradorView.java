@@ -28,5 +28,4 @@ public class AdministradorView {
         alert.setContentText("Insira outro");
         alert.showAndWait();
     }
-
 }
