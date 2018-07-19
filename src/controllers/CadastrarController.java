@@ -1,10 +1,11 @@
-package Controllers;
+package controllers;
 
-import business.ClienteBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.beans.Cliente;
 import sample.Main;
+
+import java.io.IOException;
 
 public class CadastrarController{
 
@@ -13,7 +14,7 @@ public class CadastrarController{
     public boolean retorno;
 
     @FXML
-    protected void buttonAction(javafx.event.ActionEvent actionEvent) {
+    protected void buttonAction(javafx.event.ActionEvent actionEvent) throws IOException {
 
         System.out.println("Menu");
         Main.trocaTela("Entrar");

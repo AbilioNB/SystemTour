@@ -1,11 +1,13 @@
-package Controllers;
+package controllers;
 
 import javafx.fxml.FXML;
 import sample.Main;
 
+import java.io.IOException;
+
 public class ExibirController {
     @FXML
-    protected void buttonVoltar (javafx.event.ActionEvent actionEvent){
+    protected void buttonVoltar (javafx.event.ActionEvent actionEvent) throws IOException {
         System.out.println("Retornando ao Menu");
         Main.trocaTela("Entrar");
     }

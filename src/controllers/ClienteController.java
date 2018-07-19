@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import business.ClienteBusiness;
 import model.beans.Cliente;

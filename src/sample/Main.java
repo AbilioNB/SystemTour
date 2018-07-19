@@ -1,34 +1,30 @@
 package sample;
 
-import Controllers.CadAdmController;
+import controllers.CadAdmController;
+import controllers.ScreensController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class Main extends Application {
     private static Stage stage;
     private static Scene loginScane;
-    private static Scene menuScane;
-    private static Scene cadastroScane;
-    private static Scene exibirScane;
-    private static Scene cadAdmScene;
+
+
+
+
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
         primaryStage.setTitle("Gerencia Tour");
 
-        Parent fxmlLogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
-        loginScane = new Scene(fxmlLogin, 300, 275);
-        Parent fxmlMenu = FXMLLoader.load(getClass().getResource("../view/menu.fxml"));
-        menuScane = new Scene(fxmlMenu, 400, 300);
-        Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("../view/cadastrar.fxml"));
-        cadastroScane = new Scene(fxmlCadastro, 400, 300);
-        Parent fxmlExibir = FXMLLoader.load(getClass().getResource("../view/exibirClientes.fxml"));
-        exibirScane = new Scene(fxmlExibir, 300, 400);
-        Parent fxmlCadAdm = FXMLLoader.load(getClass().getResource("../view/cadAdm.fxml"));
-        cadAdmScene = new Scene(fxmlCadAdm);
+        Parent fxmllogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
+        loginScane = new Scene(fxmllogin);
+
 
         primaryStage.setScene(loginScane);
         primaryStage.show();
@@ -37,19 +33,27 @@ public class Main extends Application {
         cadastroRoot.rootADMCADASTRO();
 
     }
-    public static void trocaTela(String tela){
+    public static void trocaTela(String tela) throws IOException {
         switch (tela){
             case "Entrar":
-                stage.setScene(menuScane);
+                stage.setScene(ScreensController.pegarCena("Entrar"));
+                stage.show();
                 break;
             case "Cadastrar":
-                stage.setScene(cadastroScane);
+                stage.setScene(ScreensController.pegarCena("Cadastrar"));
+                stage.show();
                 break;
             case "Exibir":
-                stage.setScene(exibirScane);
+                stage.setScene(ScreensController.pegarCena("Exibir"));
+                stage.show();
                 break;
             case "ADM":
-                stage.setScene(cadAdmScene);
+                stage.setScene(ScreensController.pegarCena("ADM"));
+                stage.show();
+                break;
+            case "CriarViagem":
+                stage.setScene(ScreensController.pegarCena("CriarViagem"));
+                stage.show();
                 break;
         }
     }

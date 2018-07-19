@@ -7,49 +7,56 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="Controllers.CadViagensController">
+<AnchorPane prefHeight="273.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadViagensController">
   <children>
-    <Label layoutX="206.0" layoutY="14.0" text="Cadastrar Viagem">
-      <font>
-        <Font size="24.0" />
-      </font>
-    </Label>
-    <Label alignment="CENTER_RIGHT" layoutX="32.0" layoutY="87.0" text="Origem:" textOverrun="ELLIPSIS">
-      <graphic>
-        <TextField prefWidth="200.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="32.0" layoutY="156.0" text="Destino:">
-      <graphic>
-        <TextField prefWidth="200.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="33.0" layoutY="225.0" text="Descrição:">
-      <graphic>
-        <TextField prefWidth="200.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="33.0" layoutY="282.0" text="Vagas:">
-      <graphic>
-        <TextField prefWidth="200.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="315.0" layoutY="87.0" text="Data de Partida:">
-      <graphic>
-        <TextField prefWidth="166.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="315.0" layoutY="156.0" text="Data de Chegada:">
-      <graphic>
-        <TextField prefWidth="176.0" />
-      </graphic>
-    </Label>
-    <Label layoutX="315.0" layoutY="225.0" text="Valor:">
-      <graphic>
-        <TextField prefWidth="188.0" />
-      </graphic>
-    </Label>
-    <Button layoutX="24.0" layoutY="343.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Voltar" />
-    <Button layoutX="491.0" layoutY="343.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="Enviar" />
+      <TabPane prefHeight="294.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Adicionar Viagem">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                      <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="24.0" text="Origem:" textOverrun="ELLIPSIS">
+                        <graphic>
+                          <TextField prefWidth="200.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="72.0" text="Destino:">
+                        <graphic>
+                          <TextField prefWidth="200.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="118.0" text="Descrição:">
+                        <graphic>
+                          <TextField prefHeight="25.0" prefWidth="188.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="161.0" text="Vagas Disponíveis:">
+                        <graphic>
+                          <TextField prefHeight="25.0" prefWidth="141.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="24.0" text="Data de Partida:">
+                        <graphic>
+                          <TextField prefWidth="166.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="72.0" text="Data de Chegada:">
+                        <graphic>
+                          <TextField prefHeight="25.0" prefWidth="155.0" />
+                        </graphic>
+                      </Label>
+                      <Label contentDisplay="RIGHT" layoutX="281.0" layoutY="118.0" prefHeight="25.0" prefWidth="257.0" text="Valor Unitário:">
+                        <graphic>
+                          <TextField prefHeight="25.0" prefWidth="177.0" />
+                        </graphic>
+                      </Label>
+                      <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonVoltar" prefHeight="32.0" prefWidth="75.0" text="Voltar" />
+                      <Button layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonEnviar" prefHeight="32.0" prefWidth="75.0" text="Enviar" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
   </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-package Controllers;
+package controllers;
 
 import business.AdministradorBusiness;
 import model.beans.Administrador;

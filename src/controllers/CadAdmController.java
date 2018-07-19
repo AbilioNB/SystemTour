@@ -1,10 +1,11 @@
-package Controllers;
+package controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.beans.Administrador;
-import model.persistence.AdminDAO;
 import sample.Main;
+
+import java.io.IOException;
 
 public class CadAdmController {
     @FXML
@@ -26,7 +27,7 @@ public class CadAdmController {
     }
 
     @FXML
-    protected void buttonEnviar(){
+    protected void buttonEnviar() throws IOException {
         Main.trocaTela("Entrar");
 
         Administrador bufferADM = new Administrador();
@@ -54,7 +55,7 @@ public class CadAdmController {
 
     }
     @FXML
-    protected void buttonVoltar(javafx.event.ActionEvent actionEvent){
+    protected void buttonVoltar(javafx.event.ActionEvent actionEvent) throws IOException {
         Main.trocaTela("Entrar");
     }
 }
