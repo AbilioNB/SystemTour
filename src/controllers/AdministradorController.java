@@ -1,49 +1,50 @@
 package controllers;
 
 import business.AdministradorBusiness;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import model.beans.Administrador;
-import model.persistence.AdminDAO;
-import view.AdministradorView;
+import sample.Main;
+
+import java.io.IOException;
 
 public class AdministradorController {
-
-    private boolean valorLogin, valorEmail, valorCPF, valorTel, valorData;
+    @FXML
+    private TextField loginADM, senhaADM, nomeADM, emailADM, cpfADM, telefoneADM, dataADM;
 
     AdministradorBusiness ab = new AdministradorBusiness();
-    AdministradorView av = new AdministradorView();
 
-    public Boolean CadastrarAdminitrador(Administrador buffer){
+    public void rootADMCADASTRO(){
+        Administrador bufferROOT = new Administrador();
 
-        Boolean retorno = false;
+        bufferROOT.setLogin("admin");
+        bufferROOT.setSenha("admin");
+        bufferROOT.setEmail("@");
+        bufferROOT.setCpf("82242475118");
+        bufferROOT.setTelefone("(81)99999-9999");
+        bufferROOT.setData("03/06/1099");
 
-        valorLogin = ab.validarLogin(buffer.getLogin());
-        valorEmail = ab.validarEmail(buffer.getEmail());
-        valorCPF = ab.validarCPF(buffer.getCpf());
-        valorTel = ab.validarTel(buffer.getTelefone());
-        valorData = ab.validarData(buffer.getData());
-
-
-        //TODO Validação de Login
-        //if(valorLogin != true){
-        //    av.mensagemErroLogin();
-        //}
-
-        if(valorEmail != true || valorCPF != true || valorTel != true || valorData != true){
-            av.mensagemErro();
-        }
-
-        if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
-
-            if(buffer.getLogin() == "admin"){
-                AdminDAO.salvarAdmin(buffer);
-            }else{
-                av.mensagemCadastro();
-                AdminDAO.salvarAdmin(buffer);
-                retorno = true;
-            }
-
-        }
-    return retorno;
+        ab.validarAdmnistrador(bufferROOT);
     }
 
+    @FXML
+    protected void cadastrarAdministrador() throws IOException {
+        Main.trocaTela("Entrar");
+
+        Administrador bufferADM = new Administrador();
+
+        bufferADM.setLogin(loginADM.getText());
+        bufferADM.setSenha(senhaADM.getText());
+        bufferADM.setNome(nomeADM.getText());
+        bufferADM.setEmail(emailADM.getText());
+        bufferADM.setCpf(cpfADM.getText());
+        bufferADM.setTelefone(telefoneADM.getText());
+        bufferADM.setData(dataADM.getText());
+
+        ab.validarAdmnistrador(bufferADM);
+    }
+    @FXML
+    protected void buttonVoltar(javafx.event.ActionEvent actionEvent) throws IOException {
+        Main.trocaTela("Entrar");
+    }
 }

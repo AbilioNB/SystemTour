@@ -1,10 +1,17 @@
 package business;
 
+import model.beans.Cliente;
+import model.persistence.ClienteDAO;
+import view.ClienteView;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ClienteBusiness {
+
+    private boolean valorEmail, valorCPF, valorTel, valorData = true;
+    ClienteView cv = new ClienteView();
 
     public Boolean validarEmail(String email) {
 
@@ -87,5 +94,21 @@ public class ClienteBusiness {
             info = false;
         }
         return info;
+    }
+
+    public void validarCliente(Cliente clienteBuffer){
+
+        valorEmail = validarEmail(clienteBuffer.getEmail());
+        valorCPF = validarCPF(clienteBuffer.getCpf());
+        valorTel = validarTel(clienteBuffer.getTelefone());
+        valorData = validarIdade(clienteBuffer.getData());
+
+        if(valorEmail != true || valorTel != true ||valorCPF != true || valorData != true){
+            cv.mensagemErro();
+
+        }else if(valorCPF == true && valorTel == true && valorEmail == true &&  valorData == true){
+            cv.mensagemCadastrado();
+            ClienteDAO.salvarCliente(clienteBuffer);
+        }
     }
 }

@@ -1,6 +1,6 @@
 package sample;
 
-import controllers.CadAdmController;
+import controllers.AdministradorController;
 import controllers.ScreensController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +14,6 @@ public class Main extends Application {
     private static Stage stage;
     private static Scene loginScane;
 
-
-
-
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
@@ -25,11 +22,10 @@ public class Main extends Application {
         Parent fxmllogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
         loginScane = new Scene(fxmllogin);
 
-
         primaryStage.setScene(loginScane);
         primaryStage.show();
 
-        CadAdmController cadastroRoot = new CadAdmController();
+        AdministradorController cadastroRoot = new AdministradorController();
         cadastroRoot.rootADMCADASTRO();
 
     }

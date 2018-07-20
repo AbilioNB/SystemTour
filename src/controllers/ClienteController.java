@@ -1,35 +1,31 @@
 package controllers;
 
 import business.ClienteBusiness;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
 import model.beans.Cliente;
-import model.persistence.ClienteDAO;
-import view.ClienteView;
+import sample.Main;
+import java.io.IOException;
 
 public class ClienteController {
 
-    private boolean valorEmail, valorCPF, valorTel, valorIdade, valorData = true;
+    @FXML
+    private TextField nomeCadastro, emailCadastro, cpfCadastro, dataCadastro, telefoneCadastro;
 
     ClienteBusiness cb = new ClienteBusiness();
-    ClienteView cv = new ClienteView();
 
-    public Boolean cadastrarCliente(Cliente buffer){
+    @FXML
+    protected void cadastrarCliente(javafx.event.ActionEvent actionEvent) throws IOException {
+        Main.trocaTela("Entrar");
 
-        Boolean ret = false;
+        Cliente buffer = new Cliente();
 
-        valorEmail = cb.validarEmail(buffer.getEmail());
-        valorTel = cb.validarTel(buffer.getTelefone());
-        valorCPF = cb.validarCPF(buffer.getCpf());
-        valorData = cb.validarIdade(buffer.getData());
+        buffer.setNome(nomeCadastro.getText());
+        buffer.setEmail(emailCadastro.getText());
+        buffer.setCpf(cpfCadastro.getText());
+        buffer.setData(dataCadastro.getText());
+        buffer.setTelefone(telefoneCadastro.getText());
 
-        if(valorEmail != true || valorTel != true ||valorCPF != true || valorData != true){
-            cv.mensagemErro();
-        }
-
-        if(valorCPF == true && valorTel == true && valorEmail == true &&  valorData == true){
-            cv.mensagemCadastrado();
-            ClienteDAO.salvarCliente(buffer);
-            ret = true;
-        }
-        return ret;
+        cb.validarCliente(buffer);
     }
 }

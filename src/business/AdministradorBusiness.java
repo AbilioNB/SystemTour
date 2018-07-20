@@ -1,10 +1,17 @@
 package business;
 
+import model.beans.Administrador;
+import model.persistence.AdminDAO;
+import view.AdministradorView;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class AdministradorBusiness {
+
+    private boolean valorLogin, valorEmail, valorCPF, valorTel, valorData;
+    AdministradorView av = new AdministradorView();
 
     public Boolean validarLogin(String login){
         return true;
@@ -104,5 +111,28 @@ public class AdministradorBusiness {
             }
         }
         return info;
+    }
+
+    public void validarAdmnistrador(Administrador administradorBuffer){
+
+        valorLogin = validarLogin(administradorBuffer.getLogin());
+        valorEmail = validarEmail(administradorBuffer.getEmail());
+        valorCPF = validarCPF(administradorBuffer.getCpf());
+        valorTel = validarTel(administradorBuffer.getTelefone());
+        valorData = validarData(administradorBuffer.getData());
+
+        if(valorEmail != true || valorCPF != true || valorTel != true || valorData != true){
+            av.mensagemErro();
+        }
+
+        if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
+
+            if(administradorBuffer.getLogin() == "admin"){
+                AdminDAO.salvarAdmin(administradorBuffer);
+            }else{
+                av.mensagemCadastro();
+                AdminDAO.salvarAdmin(administradorBuffer);
+            }
+        }
     }
 }

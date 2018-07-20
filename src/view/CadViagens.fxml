@@ -1,53 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="273.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadViagensController">
+<AnchorPane prefHeight="273.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViagemController">
   <children>
       <TabPane prefHeight="294.0" prefWidth="543.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
           <Tab text="Adicionar Viagem">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane fx:id="valorUnitarioViagem" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                       <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="24.0" text="Origem:" textOverrun="ELLIPSIS">
                         <graphic>
-                          <TextField prefWidth="200.0" />
+                          <TextField fx:id="origemViagem" prefWidth="200.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="72.0" text="Destino:">
                         <graphic>
-                          <TextField prefWidth="200.0" />
+                          <TextField fx:id="destinoViagem" prefWidth="200.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="118.0" text="Descrição:">
                         <graphic>
-                          <TextField prefHeight="25.0" prefWidth="188.0" />
+                          <TextField fx:id="descricaoViagem" prefHeight="25.0" prefWidth="188.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="161.0" text="Vagas Disponíveis:">
                         <graphic>
-                          <TextField prefHeight="25.0" prefWidth="141.0" />
+                          <TextField fx:id="vagasViagem" prefHeight="25.0" prefWidth="141.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="24.0" text="Data de Partida:">
                         <graphic>
-                          <TextField prefWidth="166.0" />
+                          <TextField fx:id="dataPartidaViagem" prefWidth="166.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="72.0" text="Data de Chegada:">
                         <graphic>
-                          <TextField prefHeight="25.0" prefWidth="155.0" />
+                          <TextField fx:id="dataChegadaViagem" prefHeight="25.0" prefWidth="155.0" />
                         </graphic>
                       </Label>
                       <Label contentDisplay="RIGHT" layoutX="281.0" layoutY="118.0" prefHeight="25.0" prefWidth="257.0" text="Valor Unitário:">
                         <graphic>
-                          <TextField prefHeight="25.0" prefWidth="177.0" />
+                          <TextField fx:id="unitarioViagem" prefHeight="25.0" prefWidth="177.0" />
                         </graphic>
                       </Label>
                       <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonVoltar" prefHeight="32.0" prefWidth="75.0" text="Voltar" />

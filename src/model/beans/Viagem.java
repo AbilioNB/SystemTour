@@ -7,10 +7,19 @@ public class Viagem {
     private String origem;
     private String descricao;
     private String id;
-    private Date partida;
-    private Date chegada;
+    private String partida;
+    private String chegada;
     private int qtVagas;
     private double valor;
+    private int ativo;
+
+    public int getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(int ativo) {
+        this.ativo = ativo;
+    }
 
     public String getDestino() {
         return destino;
@@ -44,19 +53,19 @@ public class Viagem {
         this.id = id;
     }
 
-    public Date getPartida() {
+    public String getPartida() {
         return partida;
     }
 
-    public void setPartida(Date partida) {
+    public void setPartida(String partida) {
         this.partida = partida;
     }
 
-    public Date getChegada() {
+    public String getChegada() {
         return chegada;
     }
 
-    public void setChegada(Date chegada) {
+    public void setChegada(String chegada) {
         this.chegada = chegada;
     }
 

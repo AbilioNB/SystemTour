@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="300.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.CadastrarController">
+<AnchorPane prefHeight="300.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ClienteController">
    <children>
       <Pane layoutY="-1.0" prefHeight="300.0" prefWidth="380.0">
          <children>
@@ -35,7 +35,7 @@
                      <graphic>
                         <TextField fx:id="telefoneCadastro" prefHeight="25.0" prefWidth="118.0" />
                      </graphic></Label>
-                  <Button layoutX="173.0" layoutY="176.0" mnemonicParsing="false" onAction="#buttonAction" text="Cadastrar" />
+                  <Button layoutX="173.0" layoutY="176.0" mnemonicParsing="false" onAction="#cadastrarCliente" text="Cadastrar" />
                   <TextField fx:id="dataCadastro" layoutX="147.0" layoutY="104.0" prefHeight="25.0" prefWidth="119.0" />
                </children></Pane>
          </children></Pane>
