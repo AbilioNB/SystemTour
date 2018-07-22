@@ -1,6 +1,5 @@
 package model.beans;
 
-import java.util.Date;
 
 public class Viagem {
     private String destino;
@@ -12,6 +11,8 @@ public class Viagem {
     private int qtVagas;
     private double valor;
     private int ativo;
+    private int despesa = 40;
+    private int pessoas = 3;
 
     public int getAtivo() {
         return ativo;
@@ -19,6 +20,22 @@ public class Viagem {
 
     public void setAtivo(int ativo) {
         this.ativo = ativo;
+    }
+
+    public int getDespesa() {
+        return despesa;
+    }
+
+    public void setDespesa(int despesa) {
+        this.despesa = despesa;
+    }
+
+    public int getPessoas() {
+        return pessoas;
+    }
+
+    public void setPessoas(int pessoas) {
+        this.pessoas = pessoas;
     }
 
     public String getDestino() {

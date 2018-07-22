@@ -4,9 +4,12 @@ import model.beans.Cliente;
 import model.persistence.ClienteDAO;
 import view.ClienteView;
 
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class ClienteBusiness {
 
@@ -82,7 +85,7 @@ public class ClienteBusiness {
         return info;
     }
 
-    public Boolean validarIdade(String data){
+    public Boolean validarData(String data){
 
         Boolean info = true;
 
@@ -96,12 +99,36 @@ public class ClienteBusiness {
         return info;
     }
 
+    public int calcularIdade(String data, String pattern){
+
+        DateFormat sdf = new SimpleDateFormat(pattern);
+
+        Date dataNascInput = null;
+
+        try {
+            dataNascInput= sdf.parse(data);
+        } catch (Exception e) {}
+
+        Calendar dataNascimento = new GregorianCalendar();
+        dataNascimento.setTime(dataNascInput);
+        Calendar today = Calendar.getInstance();
+
+        int idade = today.get(Calendar.YEAR) - dataNascimento.get(Calendar.YEAR);
+        dataNascimento.add(Calendar.YEAR, idade);
+
+        if (today.before(dataNascimento)) {
+            idade--;
+        }
+        return idade;
+    }
+
     public void validarCliente(Cliente clienteBuffer){
 
         valorEmail = validarEmail(clienteBuffer.getEmail());
         valorCPF = validarCPF(clienteBuffer.getCpf());
         valorTel = validarTel(clienteBuffer.getTelefone());
-        valorData = validarIdade(clienteBuffer.getData());
+        valorData = validarData(clienteBuffer.getData());
+        clienteBuffer.setIdade(calcularIdade(clienteBuffer.getData(), "dd/MM/yyyy"));
 
         if(valorEmail != true || valorTel != true ||valorCPF != true || valorData != true){
             cv.mensagemErro();

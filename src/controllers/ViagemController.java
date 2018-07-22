@@ -7,6 +7,7 @@ import model.beans.Viagem;
 import sample.Main;
 import view.ViagemView;
 import java.io.IOException;
+import java.util.Random;
 import java.util.UUID;
 
 public class ViagemController {
@@ -47,12 +48,12 @@ public class ViagemController {
             return;
         }
 
-        UUID gerarId = UUID.randomUUID();
-        String id = String.valueOf(gerarId);
+        Random gerarId = new Random();
+        int geradorId = gerarId.nextInt(101);
+        String id = Integer.toString(geradorId);
         bufferViagem.setId(id);
-        bufferViagem.setAtivo(1);
 
-        vb.validarViagem(bufferViagem);
+       vb.validarViagem(bufferViagem);
 
     }
     @FXML
