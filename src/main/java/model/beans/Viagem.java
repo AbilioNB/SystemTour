@@ -1,10 +1,14 @@
 package model.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
 public class Viagem {
     private String destino;
     private String origem;
     private String descricao;
+    @Id
     private String id;
     private String partida;
     private String chegada;

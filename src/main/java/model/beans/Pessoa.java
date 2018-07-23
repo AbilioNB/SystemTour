@@ -1,5 +1,7 @@
 package model.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 
 public class Pessoa {
