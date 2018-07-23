@@ -1,6 +1,10 @@
 package model.persistence;
 
 import model.beans.Cliente;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.HashMap;
 
 public class ClienteDAO {
@@ -20,6 +24,19 @@ public class ClienteDAO {
     //remover cliente da lista
     public static void removerCliente(Cliente user){
         repositorioCliente.remove(user.getCpf());
+    }
+
+    public static void salveC(Cliente user){
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+
+        em.getTransaction().begin();
+        em.persist(user);
+        em.getTransaction().commit();
+
+        em.close();
+        emf.close();
     }
 
 
