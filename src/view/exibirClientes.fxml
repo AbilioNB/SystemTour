@@ -16,18 +16,18 @@
    <children>
       <Pane prefHeight="347.0" prefWidth="515.0">
          <children>
-            <TableView layoutX="16.0" layoutY="50.0" prefHeight="285.0" prefWidth="339.0">
+            <TableView fx:id="cTable" layoutX="16.0" layoutY="50.0" prefHeight="285.0" prefWidth="339.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="Nome" />
-                <TableColumn prefWidth="75.0" text="Telefone" />
-                  <TableColumn prefWidth="75.0" text="CPF" />
+                <TableColumn fx:id="cNome" prefWidth="75.0" text="Nome" />
+                <TableColumn fx:id="cTelefone" prefWidth="75.0" text="Telefone" />
+                  <TableColumn fx:id="cCPF" prefWidth="75.0" text="CPF" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
             <Button layoutX="448.0" layoutY="306.0" mnemonicParsing="false" onAction="#buttonVoltar" prefHeight="25.0" prefWidth="52.0" text="Menu" />
-            <Button layoutX="386.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonExcluir" prefHeight="25.0" prefWidth="98.0" text="Excluir Cliente" />
+            <Button fx:id="buttonRemover" layoutX="386.0" layoutY="185.0" mnemonicParsing="false" onAction="#buttonExcluir" prefHeight="25.0" prefWidth="98.0" text="Excluir Cliente" />
             <Label layoutX="186.0" layoutY="8.0" text="Clientes Cadastrados">
                <font>
                   <Font size="17.0" />

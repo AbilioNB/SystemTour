@@ -22,5 +22,12 @@ public class ClienteView {
         alert.setContentText("O cliente foi cadastrado com sucesso!");
         alert.showAndWait();
     }
+    public static void mensagemRemover(String nome){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Removido!");
+        alert.setHeaderText(null);
+        alert.setContentText("O cliente "+ nome +" foi removido com sucesso!");
+        alert.showAndWait();
+    }
 
 }
