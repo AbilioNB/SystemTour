@@ -12,8 +12,16 @@
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SystemTour" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel target="10">
-      <module name="SystemTour" target="10" />
+      <module name="SystemTour" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>
