@@ -28,4 +28,8 @@ public class ClienteController {
 
         cb.validarCliente(buffer);
     }
+    @FXML
+    protected void buttonVoltar(javafx.event.ActionEvent actionEvent)throws IOException{
+        Main.trocaTela("Entrar");
+    }
 }
