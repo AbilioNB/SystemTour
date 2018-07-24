@@ -11,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.Viagem;
 import sample.Main;
-import view.ClienteView;
 import view.ViagemView;
 
 import java.util.*;
@@ -47,11 +46,11 @@ public class ViagemController implements Initializable {
                 observable, oldValue, newValue)-> viagemSelecionada(newValue));
     }
     public void carregarListaViagem(){
-        vDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
-        vDate.setCellValueFactory(new PropertyValueFactory<>("partida"));
-        vVagas.setCellValueFactory(new PropertyValueFactory<>("qtVagas"));
-        vValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
-        vID.setCellValueFactory(new PropertyValueFactory<>("id"));
+        vDestino.setCellValueFactory(new PropertyValueFactory<>("destinoEx"));
+        vDate.setCellValueFactory(new PropertyValueFactory<>("partidaEx"));
+        vVagas.setCellValueFactory(new PropertyValueFactory<>("qtVagasEx"));
+        vValor.setCellValueFactory(new PropertyValueFactory<>("valorEx"));
+        vID.setCellValueFactory(new PropertyValueFactory<>("idEx"));
 
         Viagem v1 = new Viagem("Disney", "01/09/2018",70,50.00 , "3435");
         Viagem v2 = new Viagem("Moreno","06/10/2018",80,350.00 ,"5475");
@@ -67,14 +66,14 @@ public class ViagemController implements Initializable {
     }
     public void viagemSelecionada(Viagem viagem){
         if (viagem != null){
-            System.out.println("Viagem para " + viagem.getDestino() + " foi selecionada");
+            System.out.println("Viagem para " + viagem.getDestinoEx() + " foi selecionada");
         }
     }
     @FXML
     protected void buttonRemover(){
         Viagem viagem = vTable.getSelectionModel().getSelectedItem();
         if (viagem != null){
-            ViagemView.mensagemRemover(viagem.getDestino());
+            ViagemView.mensagemRemover(viagem.getDestinoEx());
             vTable.getItems().remove(viagem);
         }
     }

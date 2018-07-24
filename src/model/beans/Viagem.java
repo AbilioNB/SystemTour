@@ -30,7 +30,7 @@ public class Viagem {
         this.partidaEx = new SimpleStringProperty(partidaEx);
         this.qtVagasEx = new SimpleIntegerProperty(vagasEx);
         this.valorEx = new SimpleDoubleProperty(valorEx);
-        this.idEx = new SimpleStringProperty(id);
+        this.idEx = new SimpleStringProperty(idEx);
     }
 
     public String getVagas() {
