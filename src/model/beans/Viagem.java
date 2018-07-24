@@ -1,18 +1,34 @@
 package model.beans;
 
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 public class Viagem {
-    private String destino;
+    private SimpleStringProperty destino;
     private String origem;
     private String descricao;
-    private String id;
-    private String partida;
+    private SimpleStringProperty id;
+    private SimpleStringProperty partida;
     private String chegada;
-    private int qtVagas;
-    private double valor;
+    private SimpleIntegerProperty qtVagas;
+    private SimpleDoubleProperty valor;
     private int ativo;
     private int despesa = 40;
     private int pessoas = 3;
+
+    public Viagem(String destino, String partida, Integer vagas, Double valor, String id){
+        this.destino = new SimpleStringProperty(destino);
+        this.partida = new SimpleStringProperty(partida);
+        this.qtVagas = new SimpleIntegerProperty(vagas);
+        this.valor = new SimpleDoubleProperty(valor);
+        this.id = new SimpleStringProperty(id);
+    }
+
+    public Viagem() {
+        super();
+    }
 
     public int getAtivo() {
         return ativo;
@@ -39,11 +55,15 @@ public class Viagem {
     }
 
     public String getDestino() {
+        return destino.get();
+    }
+
+    public SimpleStringProperty destinoProperty() {
         return destino;
     }
 
     public void setDestino(String destino) {
-        this.destino = destino;
+        this.destino.set(destino);
     }
 
     public String getOrigem() {
@@ -63,19 +83,27 @@ public class Viagem {
     }
 
     public String getId() {
+        return id.get();
+    }
+
+    public SimpleStringProperty idProperty() {
         return id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.id.set(id);
     }
 
     public String getPartida() {
+        return partida.get();
+    }
+
+    public SimpleStringProperty partidaProperty() {
         return partida;
     }
 
     public void setPartida(String partida) {
-        this.partida = partida;
+        this.partida.set(partida);
     }
 
     public String getChegada() {
@@ -87,18 +115,26 @@ public class Viagem {
     }
 
     public int getQtVagas() {
+        return qtVagas.get();
+    }
+
+    public SimpleIntegerProperty qtVagasProperty() {
         return qtVagas;
     }
 
     public void setQtVagas(int qtVagas) {
-        this.qtVagas = qtVagas;
+        this.qtVagas.set(qtVagas);
     }
 
     public double getValor() {
+        return valor.get();
+    }
+
+    public SimpleDoubleProperty valorProperty() {
         return valor;
     }
 
     public void setValor(double valor) {
-        this.valor = valor;
+        this.valor.set(valor);
     }
 }

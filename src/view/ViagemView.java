@@ -35,5 +35,12 @@ public class ViagemView {
         dialogoInfo.setContentText("Insira uma origem ou destino válidos");
         dialogoInfo.showAndWait();
     }
+    public static void mensagemRemover(String nome){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Removido!");
+        alert.setHeaderText(null);
+        alert.setContentText("A viagem para "+ nome +" foi removida com sucesso!");
+        alert.showAndWait();
+    }
 
 }

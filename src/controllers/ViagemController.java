@@ -1,19 +1,83 @@
 package controllers;
 
 import business.ViagemBusiness;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.Viagem;
 import sample.Main;
+import view.ClienteView;
 import view.ViagemView;
-import java.io.IOException;
-import java.util.Random;
-import java.util.UUID;
 
-public class ViagemController {
+import java.util.*;
+import java.io.IOException;
+import java.net.URL;
+
+public class ViagemController implements Initializable {
+    @FXML
+    private javafx.scene.control.TableView<Viagem> vTable;
+    @FXML
+    private TableColumn<Viagem, String> vDestino;
+    @FXML
+    private TableColumn<Viagem, String> vDate;
+    @FXML
+    private TableColumn<Viagem, Integer> vVagas;
+    @FXML
+    private TableColumn<Viagem, Double> vValor;
+    @FXML
+    private TableColumn<Viagem, String> vID;
+    @FXML
+    private Button buttonRemover;
+
+    private List<Viagem>ListViagem = new ArrayList();
+    private ObservableList<Viagem> observableListViagem;
 
     @FXML
     private TextField origemViagem, destinoViagem, descricaoViagem, vagasViagem, dataPartidaViagem, dataChegadaViagem, unitarioViagem;
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        carregarListaViagem();
+        vTable.getSelectionModel().selectedItemProperty().addListener((
+                observable, oldValue, newValue)-> viagemSelecionada(newValue));
+    }
+    public void carregarListaViagem(){
+        vDestino.setCellValueFactory(new PropertyValueFactory<>("destino"));
+        vDate.setCellValueFactory(new PropertyValueFactory<>("partida"));
+        vVagas.setCellValueFactory(new PropertyValueFactory<>("qtVagas"));
+        vValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
+        vID.setCellValueFactory(new PropertyValueFactory<>("id"));
+
+        Viagem v1 = new Viagem("Disney", "01/09/2018",70,50.00 , "3435");
+        Viagem v2 = new Viagem("Moreno","06/10/2018",80,350.00 ,"5475");
+        Viagem v3 = new Viagem("Galego","20/11/2018",90,500.00 ,"4478");
+
+        ListViagem.add(v1);
+        ListViagem.add(v2);
+        ListViagem.add(v3);
+
+        observableListViagem = FXCollections.observableArrayList(ListViagem);
+
+        vTable.setItems(observableListViagem);
+    }
+    public void viagemSelecionada(Viagem viagem){
+        if (viagem != null){
+            System.out.println("Viagem para " + viagem.getDestino() + " foi selecionada");
+        }
+    }
+    @FXML
+    protected void buttonRemover(){
+        Viagem viagem = vTable.getSelectionModel().getSelectedItem();
+        if (viagem != null){
+            ViagemView.mensagemRemover(viagem.getDestino());
+            vTable.getItems().remove(viagem);
+        }
+    }
 
     @FXML
     protected void buttonEnviar(javafx.event.ActionEvent actionEvent) throws IOException {

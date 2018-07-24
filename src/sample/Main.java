@@ -51,6 +51,14 @@ public class Main extends Application {
                 stage.setScene(ScreensController.pegarCena("CriarViagem"));
                 stage.show();
                 break;
+            case "Financeiro":
+                stage.setScene(ScreensController.pegarCena("Financeiro"));
+                stage.show();
+                break;
+            case "Pagar":
+                stage.setScene(ScreensController.pegarCena("Pagar"));
+                stage.show();
+                break;
         }
     }
 

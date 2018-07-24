@@ -24,4 +24,8 @@ public class MenuController  {
     protected void buttonCadViagem(javafx.event.ActionEvent actionEvent) throws IOException {
         Main.trocaTela("CriarViagem");
     }
+    @FXML
+    protected void buttonPagar(javafx.event.ActionEvent actionEvent) throws IOException {
+        Main.trocaTela("Financeiro");
+    }
 }
