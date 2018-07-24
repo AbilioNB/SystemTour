@@ -14,7 +14,6 @@ public class ViagemBusiness {
     public Boolean validarData(String data){
         boolean info = true;
 
-
         SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
 
         try {

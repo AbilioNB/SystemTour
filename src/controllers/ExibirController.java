@@ -43,9 +43,9 @@ public class ExibirController implements Initializable {
                 observable, oldValue, newValue)-> clienteSelecionado(newValue));
     }
     public void carregarListaClientes(){
-        cNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
-        cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-        cCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+        cNome.setCellValueFactory(new PropertyValueFactory<>("nomeEx"));
+        cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefoneEx"));
+        cCPF.setCellValueFactory(new PropertyValueFactory<>("cpfEx"));
 
         Cliente c1 = new Cliente("Gabriel", "(81)99999-9999", "70561283435");
         Cliente c2 = new Cliente("Kelvin","(81)88888-8888","10835895475");
@@ -62,15 +62,15 @@ public class ExibirController implements Initializable {
     }
     public void clienteSelecionado(Cliente cliente){
         if (cliente != null){
-        System.out.println("Cliente selecionado foi: " + cliente.getNome());
+            System.out.println("Cliente selecionado foi: " + cliente.getNomeEx());
         }
     }
     @FXML
     protected void buttonExcluir (){
         Cliente cliente = cTable.getSelectionModel().getSelectedItem();
         if (cliente != null){
-        ClienteView.mensagemRemover(cliente.getNome());
-        cTable.getItems().remove(cliente);
+            ClienteView.mensagemRemover(cliente.getNomeEx());
+            cTable.getItems().remove(cliente);
         }
     }
     @FXML
@@ -79,7 +79,6 @@ public class ExibirController implements Initializable {
     }
     @FXML
     protected void buttonEditar (javafx.event.ActionEvent actionEvent){
-       // Main.trocaTela("");
+        // Main.trocaTela("");
     }
-
 }

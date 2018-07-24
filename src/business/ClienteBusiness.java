@@ -1,9 +1,9 @@
 package business;
 
 import model.beans.Cliente;
+import model.beans.Financeiro;
 import model.persistence.ClienteDAO;
 import view.ClienteView;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +15,7 @@ public class ClienteBusiness {
 
     private boolean valorEmail, valorCPF, valorTel, valorData = true;
     ClienteView cv = new ClienteView();
+    FinanceiroBusiness fb = new FinanceiroBusiness();
 
     public Boolean validarEmail(String email) {
 
@@ -134,6 +135,7 @@ public class ClienteBusiness {
             cv.mensagemErro();
 
         }else if(valorCPF == true && valorTel == true && valorEmail == true &&  valorData == true){
+            fb.receptaculo(clienteBuffer.getCpf());
             cv.mensagemCadastrado();
             ClienteDAO.salvarCliente(clienteBuffer);
         }

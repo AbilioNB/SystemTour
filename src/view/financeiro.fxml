@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="232.0" prefWidth="215.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.financeiroController">
+<AnchorPane prefHeight="232.0" prefWidth="215.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FinanceiroController">
    <children>
       <TabPane prefHeight="237.0" prefWidth="215.0" tabClosingPolicy="UNAVAILABLE">
         <tabs>
@@ -16,12 +17,12 @@
                      <children>
                         <Label layoutX="22.0" layoutY="40.0" nodeOrientation="RIGHT_TO_LEFT" text="CPF do Cliente:">
                            <graphic>
-                              <TextField nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="94.0" />
+                              <TextField fx:id="cpfFinanceiro" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="94.0" />
                            </graphic>
                         </Label>
                         <Label layoutX="22.0" layoutY="99.0" nodeOrientation="RIGHT_TO_LEFT" text="Contrato:">
                            <graphic>
-                              <TextField nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="128.0" />
+                              <TextField fx:id="contratoFinanceiro" nodeOrientation="LEFT_TO_RIGHT" prefHeight="25.0" prefWidth="128.0" />
                            </graphic>
                         </Label>
                         <Button layoutX="14.0" layoutY="177.0" mnemonicParsing="false" onAction="#buttonVoltar" text="Menu" />

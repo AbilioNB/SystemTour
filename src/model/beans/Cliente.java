@@ -1,6 +1,5 @@
 package model.beans;
 
-import javax.swing.*;
 import javafx.beans.property.SimpleStringProperty;
 import java.util.ArrayList;
 
@@ -8,49 +7,62 @@ public class Cliente extends Pessoa {
 
     ArrayList<Viagem> viagensFeitas = new ArrayList();
 
-    private  SimpleStringProperty nome;
-    private SimpleStringProperty telefone;
-    private  SimpleStringProperty cpf;
+    private  SimpleStringProperty nomeEx;
+    private SimpleStringProperty telefoneEx;
+    private  SimpleStringProperty cpfEx;
 
-    public Cliente(String nome, String tel, String CPF) {
-        this.nome = new SimpleStringProperty(nome);
-        this.telefone = new SimpleStringProperty(tel);
-        this.cpf = new SimpleStringProperty(CPF);
-    }
-    public String getNome() {
-        return nome.get();
-    }
+    private String contrato;
 
-    public SimpleStringProperty nomeProperty() {
-        return nome;
+    public Cliente(String nomeEx, String telEx, String CPFEx) {
+        this.nomeEx = new SimpleStringProperty(nomeEx);
+        this.telefoneEx = new SimpleStringProperty(telEx);
+        this.cpfEx = new SimpleStringProperty(CPFEx);
     }
 
-    public void setNome(String nome) {
-        this.nome.set(nome);
+    public String getNomeEx() {
+        return nomeEx.get();
     }
 
-    public String getTelefone() {
-        return telefone.get();
+    public String getContrato() {
+        return contrato;
     }
 
-    public SimpleStringProperty telefoneProperty() {
-        return telefone;
+    public void setContrato(String contrato) {
+
+        this.contrato = contrato;
+
     }
 
-    public void setTelefone(String cel) {
-        this.telefone.set(cel);
+    public String getCpfEx() {
+        return cpfEx.get();
     }
 
-    public String getCPF() {
-        return cpf.get();
+    public void setCpfEx(String cpfEx) {
+        this.cpfEx.set(cpfEx);
     }
 
-    public SimpleStringProperty cpfProperty() {
-        return cpf;
+    public SimpleStringProperty nomeExProperty() {
+        return nomeEx;
     }
 
-    public void setCPF(String CPF) {
-        this.cpf.set(CPF);
+    public void setNomeEx(String nomeEx) {
+        this.nomeEx.set(nomeEx);
+    }
+
+    public String getTelefoneEx() {
+        return telefoneEx.get();
+    }
+
+    public SimpleStringProperty telefoneExProperty() {
+        return telefoneEx;
+    }
+
+    public void setTelefoneEx(String cel) {
+        this.telefoneEx.set(cel);
+    }
+
+    public SimpleStringProperty cpfExProperty() {
+        return cpfEx;
     }
 
     public Cliente() {
