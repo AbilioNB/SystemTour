@@ -28,15 +28,14 @@ public class ClienteDAO {
 
     public static void salveC(Cliente user){
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
-        EntityManager em = emf.createEntityManager();
+        EntityManager em = new Connection().getConnection();
 
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
 
         em.close();
-        emf.close();
+        
     }
 
 
