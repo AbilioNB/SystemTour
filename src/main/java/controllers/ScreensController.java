@@ -20,23 +20,23 @@ public class ScreensController {
     public static Scene pegarCena(String scene) throws IOException {
         switch (scene){
             case "Entrar":
-                Parent fxmlMenu = FXMLLoader.load(ScreensController.class.getResource("../view/menu.fxml"));
+                Parent fxmlMenu = FXMLLoader.load(ScreensController.class.getResource("/menu.fxml"));
                 menuScane = new Scene(fxmlMenu);
                 return menuScane;
             case "Cadastrar":
-                Parent fxmlCadastro = FXMLLoader.load(ScreensController.class.getResource("../view/cadastrar.fxml"));
+                Parent fxmlCadastro = FXMLLoader.load(ScreensController.class.getResource("/cadastrar.fxml"));
                 cadastroScane = new Scene(fxmlCadastro);
                 return cadastroScane;
             case "Exibir":
-                Parent fxmlExibir = FXMLLoader.load(ScreensController.class.getResource("../view/exibirClientes.fxml"));
+                Parent fxmlExibir = FXMLLoader.load(ScreensController.class.getResource("/exibirClientes.fxml"));
                 exibirScane = new Scene(fxmlExibir);
                 return exibirScane;
             case "ADM":
-                Parent fxmlCadAdm = FXMLLoader.load(ScreensController.class.getResource("../view/cadAdm.fxml"));
+                Parent fxmlCadAdm = FXMLLoader.load(ScreensController.class.getResource("/cadAdm.fxml"));
                 cadAdmScene = new Scene(fxmlCadAdm);
                 return cadAdmScene;
             case "CriarViagem":
-                Parent fxmlCadViagem = FXMLLoader.load(ScreensController.class.getResource("../view/cadViagens.fxml"));
+                Parent fxmlCadViagem = FXMLLoader.load(ScreensController.class.getResource("/cadViagens.fxml"));
                 cadViagem = new Scene(fxmlCadViagem);
                 return cadViagem;
         }
