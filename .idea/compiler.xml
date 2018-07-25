@@ -20,8 +20,6 @@
         <module name="SystemTour" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="7">
-      <module name="SystemTour" target="7" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>

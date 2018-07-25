@@ -19,7 +19,7 @@ public class Main extends Application {
         stage = primaryStage;
         primaryStage.setTitle("Gerencia Tour");
 
-        Parent fxmllogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
+        Parent fxmllogin = FXMLLoader.load(getClass().getResource("/login.fxml"));
         loginScane = new Scene(fxmllogin);
 
         primaryStage.setScene(loginScane);

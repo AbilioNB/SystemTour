@@ -135,7 +135,7 @@ public class ClienteBusiness {
 
         }else if(valorCPF == true && valorTel == true && valorEmail == true &&  valorData == true){
             cv.mensagemCadastrado();
-            ClienteDAO.salveC(clienteBuffer);
+           // ClienteDAO.salveC(clienteBuffer);
         }
     }
 }

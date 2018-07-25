@@ -75,7 +75,7 @@ public class ClienteDAO {
         List<Cliente> listaClientes = null;
 //Caso não rode aqui ele pede que seja criado uma lista do tipo comum e não do tipo cliente.
         try{
-            listaClientes = em.createQuery("from Cliente").getResultList();
+            listaClientes = em.createQuery("from Cliente", Cliente.class ).getResultList();
         }catch (Exception e ){
             System.err.println(e);
         }finally {
@@ -83,6 +83,7 @@ public class ClienteDAO {
         }
         return listaClientes;
     }
+
     //Removendo
     public void removerCliente(String key){
         EntityManager em = new Connection().getConnection();
