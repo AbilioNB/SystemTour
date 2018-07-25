@@ -30,12 +30,26 @@ public class ClienteDAO {
 
         EntityManager em = new Connection().getConnection();
 
+       try{
+           em.getTransaction().begin();
+           em.persist(user);
+           em.getTransaction().commit();
+       } catch (Exception e){
+           em.getTransaction().rollback();
+           System.out.println("Erro ao salvar! \nDescrição:"+ e);
+       }finally {
+           em.close();
+       }
+
+
+
+
         em.getTransaction().begin();
         em.persist(user);
         em.getTransaction().commit();
 
-        em.close();
-        
+
+
     }
 
 
