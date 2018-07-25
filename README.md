@@ -52,7 +52,11 @@ Cliente:
 Versão JAVA: 
 	<br> Java 8
 <br>Dependências: 
-	<br>Java Fx
+	<ul>
+		<li>JPA</li>
+		<li>Java FX</li>
+		<li> Banco de dados Mysql</li>
+	</ul>
 
 Time de Desenvolvedores : 
 	<ul>
