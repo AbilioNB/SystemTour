@@ -57,6 +57,11 @@ Versão JAVA:
 		<li>Java FX</li>
 		<li> Banco de dados Mysql</li>
 	</ul>
+Para criar o Banco :
+	1- create database stdatabase;
+	2- Depois é só rodar o programa
+	3- Fazer o chamado da função de cadastro com banco 
+	4- Executar o programa.
 
 Time de Desenvolvedores : 
 	<ul>
