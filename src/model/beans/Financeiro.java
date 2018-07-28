@@ -2,34 +2,26 @@ package model.beans;
 
 public class Financeiro {
 
-    private String cpfCon;
-    private String cpfDoCliente;
+    private String cpfContrato;
+    private String cpfCliente;
     private String numeroContrato;
-    private String valorPago;
     private String dataPagamento;
+    private Double valorPago;
 
-    public String getCpfCon() {
-        return cpfCon;
+    public String getCpfContrato() {
+        return cpfContrato;
     }
 
-    public String getValorPago() {
-        return valorPago;
+    public void setCpfContrato(String cpfContrato) {
+        this.cpfContrato = cpfContrato;
     }
 
-    public void setValorPago(String valorPago) {
-        this.valorPago = valorPago;
+    public String getCpfCliente() {
+        return cpfCliente;
     }
 
-    public String getDataPagamento() {
-        return dataPagamento;
-    }
-
-    public void setDataPagamento(String dataPagamento) {
-        this.dataPagamento = dataPagamento;
-    }
-
-    public void setCpfCon(String cpfCon) {
-        this.cpfCon = cpfCon;
+    public void setCpfCliente(String cpfCliente) {
+        this.cpfCliente = cpfCliente;
     }
 
     public String getNumeroContrato() {
@@ -40,11 +32,19 @@ public class Financeiro {
         this.numeroContrato = numeroContrato;
     }
 
-    public String getCpfDoCliente() {
-        return cpfDoCliente;
+    public String getDataPagamento() {
+        return dataPagamento;
     }
 
-    public void setCpfDoCliente(String cpfDoCliente) {
-        this.cpfDoCliente = cpfDoCliente;
+    public void setDataPagamento(String dataPagamento) {
+        this.dataPagamento = dataPagamento;
+    }
+
+    public Double getValorPago() {
+        return valorPago;
+    }
+
+    public void setValorPago(Double valorPago) {
+        this.valorPago = valorPago;
     }
 }

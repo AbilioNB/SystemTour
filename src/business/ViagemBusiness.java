@@ -11,6 +11,8 @@ public class ViagemBusiness {
 
     ViagemView vv = new ViagemView();
 
+
+
     public Boolean validarData(String data){
         boolean info = true;
 
@@ -24,11 +26,12 @@ public class ViagemBusiness {
         return info;
     }
 
-    public Boolean validarOrigemDestino(String origem, String destino){
+
+    public Boolean validarOrigemDestino(Viagem v){
 
         Boolean info;
 
-        if(origem == null || destino == null){
+        if(v.getOrigem() == null || v.getDestino()== null){
             vv.mensagemErroOrigemeDestino();
             info = false;
         } else {
@@ -65,20 +68,19 @@ public class ViagemBusiness {
 
         dataPartida = validarData(viagem.getPartida());
         dataChegada = validarData(viagem.getChegada());
-        origemEDestino = validarOrigemDestino(viagem.getOrigem(), viagem.getDestino());
 
         pacoteFamilia(viagem);
         adicionarDespesa(viagem);
 
 
 
-        if(dataPartida == true && dataChegada == true && origemEDestino == true){
+        if(dataPartida == true && dataChegada == true){
             viagem.setAtivo(1);
             salvar.salvarViagem(viagem);
             System.out.println(viagem.getValor());
         }
 
-        if(dataPartida == false || dataChegada == false || origemEDestino == false){
+        if(dataPartida == false || dataChegada == false){
             vv.mensagemErroData();
         }
     }

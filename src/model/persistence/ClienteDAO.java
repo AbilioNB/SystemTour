@@ -14,13 +14,10 @@ public class ClienteDAO {
         repositorioCliente.put(user.getCpf(),user);
         //a partir daqui apagar
         System.out.println("Realmentefoi gravado!\n Numero de elementos no map :" + repositorioCliente.size()+"\n");
-
-
     }
     //remover cliente da lista
     public static void removerCliente(Cliente user){
         repositorioCliente.remove(user.getCpf());
     }
-
 
 }

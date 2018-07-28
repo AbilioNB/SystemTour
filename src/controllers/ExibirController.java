@@ -7,10 +7,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
-import model.beans.Cliente;
 import sample.Main;
+import view.ClienteExibir;
 import view.ClienteView;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -19,22 +18,22 @@ import java.util.ResourceBundle;
 
 public class ExibirController implements Initializable {
     @FXML
-    private javafx.scene.control.TableView<Cliente> cTable;
+    private javafx.scene.control.TableView<ClienteExibir> cTable;
 
     @FXML
-    private TableColumn<Cliente,String> cNome;
+    private TableColumn<ClienteExibir,String> cNome;
 
     @FXML
-    private TableColumn<Cliente,String> cTelefone;
+    private TableColumn<ClienteExibir,String> cTelefone;
 
     @FXML
-    private TableColumn<Cliente,String> cCPF;
+    private TableColumn<ClienteExibir,String> cCPF;
 
     @FXML
     private Button buttonRemover;
 
-    private List<Cliente>lisTCliente = new ArrayList();
-    private ObservableList<Cliente>observableListCliente;
+    private List<ClienteExibir>lisTCliente = new ArrayList();
+    private ObservableList<ClienteExibir>observableListCliente;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -47,9 +46,9 @@ public class ExibirController implements Initializable {
         cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefoneEx"));
         cCPF.setCellValueFactory(new PropertyValueFactory<>("cpfEx"));
 
-        Cliente c1 = new Cliente("Gabriel", "(81)99999-9999", "70561283435");
-        Cliente c2 = new Cliente("Kelvin","(81)88888-8888","10835895475");
-        Cliente c3 = new Cliente("Abilio","(81)77777-7777","11487004478");
+        ClienteExibir c1 = new ClienteExibir("Gabriel", "(81)99999-9999", "70561283435");
+        ClienteExibir c2 = new ClienteExibir("Kelvin","(81)88888-8888","10835895475");
+        ClienteExibir c3 = new ClienteExibir("Abilio","(81)77777-7777","11487004478");
 
         lisTCliente.add(c1);
         lisTCliente.add(c2);
@@ -60,14 +59,14 @@ public class ExibirController implements Initializable {
         cTable.setItems(observableListCliente);
 
     }
-    public void clienteSelecionado(Cliente cliente){
+    public void clienteSelecionado(ClienteExibir cliente){
         if (cliente != null){
             System.out.println("Cliente selecionado foi: " + cliente.getNomeEx());
         }
     }
     @FXML
     protected void buttonExcluir (){
-        Cliente cliente = cTable.getSelectionModel().getSelectedItem();
+        ClienteExibir cliente = cTable.getSelectionModel().getSelectedItem();
         if (cliente != null){
             ClienteView.mensagemRemover(cliente.getNomeEx());
             cTable.getItems().remove(cliente);

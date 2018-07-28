@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.Viagem;
 import sample.Main;
+import view.ViagemExibir;
 import view.ViagemView;
 
 import java.util.*;
@@ -19,22 +20,30 @@ import java.net.URL;
 
 public class ViagemController implements Initializable {
     @FXML
-    private javafx.scene.control.TableView<Viagem> vTable;
+    private javafx.scene.control.TableView<ViagemExibir> vTable;
     @FXML
-    private TableColumn<Viagem, String> vDestino;
+    private TableColumn<ViagemExibir, String> vDestino;
     @FXML
-    private TableColumn<Viagem, String> vDate;
+    private TableColumn<ViagemExibir, String> vDate;
     @FXML
-    private TableColumn<Viagem, Integer> vVagas;
+    private TableColumn<ViagemExibir, Integer> vVagas;
     @FXML
-    private TableColumn<Viagem, Double> vValor;
+    private TableColumn<ViagemExibir, Double> vValor;
     @FXML
-    private TableColumn<Viagem, String> vID;
+    private TableColumn<ViagemExibir, String> vID;
     @FXML
     private Button buttonRemover;
 
-    private List<Viagem>ListViagem = new ArrayList();
-    private ObservableList<Viagem> observableListViagem;
+    private String destinoPassar;
+    private String dataPassar;
+    private int vagasPassar;
+    private double valorPassar;
+    private String idPassar;
+
+    Viagem v = new Viagem();
+
+    private List<ViagemExibir>ListViagem = new ArrayList();
+    private ObservableList<ViagemExibir> observableListViagem;
 
     @FXML
     private TextField origemViagem, destinoViagem, descricaoViagem, vagasViagem, dataPartidaViagem, dataChegadaViagem, unitarioViagem;
@@ -46,15 +55,18 @@ public class ViagemController implements Initializable {
                 observable, oldValue, newValue)-> viagemSelecionada(newValue));
     }
     public void carregarListaViagem(){
+
+
+
         vDestino.setCellValueFactory(new PropertyValueFactory<>("destinoEx"));
         vDate.setCellValueFactory(new PropertyValueFactory<>("partidaEx"));
         vVagas.setCellValueFactory(new PropertyValueFactory<>("qtVagasEx"));
         vValor.setCellValueFactory(new PropertyValueFactory<>("valorEx"));
         vID.setCellValueFactory(new PropertyValueFactory<>("idEx"));
 
-        Viagem v1 = new Viagem("Disney", "01/09/2018",70,50.00 , "3435");
-        Viagem v2 = new Viagem("Moreno","06/10/2018",80,350.00 ,"5475");
-        Viagem v3 = new Viagem("Galego","20/11/2018",90,500.00 ,"4478");
+        ViagemExibir v1 = new ViagemExibir("Disney", "01/09/2018",70,50.00 , "3435");
+        ViagemExibir v2 = new ViagemExibir("Moreno","06/10/2018",80,350.00 ,"5475");
+        ViagemExibir v3 = new ViagemExibir("Galego","20/11/2018",90,500.00 ,"4478");
 
         ListViagem.add(v1);
         ListViagem.add(v2);
@@ -64,14 +76,43 @@ public class ViagemController implements Initializable {
 
         vTable.setItems(observableListViagem);
     }
-    public void viagemSelecionada(Viagem viagem){
+    public void viagemSelecionada(ViagemExibir viagem){
         if (viagem != null){
+            destinoPassar = viagem.getDestinoEx();
+            dataPassar = viagem.getPartidaEx();
+            vagasPassar = viagem.getQtVagasEx();
+            valorPassar = viagem.getValorEx();
+            idPassar = viagem.getIdEx();
             System.out.println("Viagem para " + viagem.getDestinoEx() + " foi selecionada");
         }
     }
     @FXML
+    protected void buttonVender(){
+        System.out.println(getDestinoPassar());
+        System.out.println(getDataPassar());
+        System.out.println(getVagasPassar());
+        System.out.println(getValorPassar());
+        System.out.println(getIdPassar());
+    }
+    public String getDestinoPassar(){
+        return destinoPassar;
+    }
+    public String getDataPassar(){
+        return dataPassar;
+    }
+    public int getVagasPassar(){
+        return vagasPassar;
+    }
+    public double getValorPassar(){
+        return valorPassar;
+    }
+    public String getIdPassar(){
+        return idPassar;
+    }
+
+    @FXML
     protected void buttonRemover(){
-        Viagem viagem = vTable.getSelectionModel().getSelectedItem();
+        ViagemExibir viagem = vTable.getSelectionModel().getSelectedItem();
         if (viagem != null){
             ViagemView.mensagemRemover(viagem.getDestinoEx());
             vTable.getItems().remove(viagem);

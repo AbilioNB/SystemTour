@@ -1,8 +1,8 @@
 package business;
 
 import model.beans.Cliente;
-import model.beans.Financeiro;
 import model.persistence.ClienteDAO;
+import model.persistence.FinanceiroDAO;
 import view.ClienteView;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -135,7 +135,6 @@ public class ClienteBusiness {
             cv.mensagemErro();
 
         }else if(valorCPF == true && valorTel == true && valorEmail == true &&  valorData == true){
-            fb.receptaculo(clienteBuffer.getCpf());
             cv.mensagemCadastrado();
             ClienteDAO.salvarCliente(clienteBuffer);
         }
