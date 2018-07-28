@@ -6,6 +6,8 @@
     <!-- Lista de entidades -->
     <class>model.beans.Cliente</class>
       <class>model.beans.Viagem</class>
+    <class>model.beans.Pessoa</class>
+      <class> model.beans.Pacote</class>
     <properties>
       <!-- Propriedades JDBC -->
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

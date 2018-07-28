@@ -1,15 +1,14 @@
 package model.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.annotation.Generated;
+import javax.persistence.*;
 import java.util.Date;
-
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idPessoa;
     private String nome;
     private String email;
     private String cpf;
@@ -17,12 +16,12 @@ public class Pessoa {
     private String data;
     private String telefone;
 
-    public Long getId() {
-        return id;
+    public Long getIdPessoa() {
+        return idPessoa;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setIdPessoa(Long idPessoa) {
+        this.idPessoa = idPessoa;
     }
 
     public String getData() {

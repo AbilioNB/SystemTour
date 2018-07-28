@@ -1,21 +1,22 @@
 package model.beans;
+import javax.persistence.*;
 import java.util.ArrayList;
-
+@Entity
 public class Pacote extends Viagem {
 
-    ArrayList<Cliente> nomeCpf = new ArrayList();
+
 
     private double taxaDesconto;
+   @Embedded
     private Viagem viagemPacote;
     private int qtdClientes;
+    private double valorFinal;
+    @Id
+    private double pacoteId;
+    @ManyToOne
+    private int idCliente;
 
-    public ArrayList <Cliente> getNomeCpf() {
-        return nomeCpf;
-    }
 
-    public void setNomeCpf(ArrayList <Cliente> nomeCpf) {
-        this.nomeCpf = nomeCpf;
-    }
 
     public double getTaxaDesconto() {
         return taxaDesconto;

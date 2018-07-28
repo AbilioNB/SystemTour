@@ -1,9 +1,9 @@
 package model.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Embeddable
 public class Viagem {
     private String destino;
     private String origem;
