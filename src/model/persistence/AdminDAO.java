@@ -11,7 +11,6 @@ public class AdminDAO {
 
     public static void salvarAdmin(Administrador adm){
         repositorioADM.put(adm.getCpf(), adm);
-
     }
 
     public static void removerADM(Administrador adm){   

@@ -3,7 +3,6 @@ package business;
 import model.beans.Administrador;
 import model.persistence.AdminDAO;
 import view.AdministradorView;
-
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,24 +16,23 @@ public class AdministradorBusiness {
         return true;
     }
 
-    public Boolean validarEmail(String email){
-        Boolean resp = true;
+    public void validarEmail(String email) throws NullPointerException{
 
         int i = email.indexOf("@");
         if (i < 0) {
-            resp = false;
+            throw new NullPointerException();
         }
-        return resp;
     }
 
-    public Boolean validarCPF(String cpf){
+    public void validarCPF(String cpf) throws NullPointerException{
         char dig1, dig2;
         int diminui = 11, resultado;
         int soma = 0, num;
 
         if (cpf.length() != 11) {
-            return false;
+            throw new NullPointerException();
         }
+
         for (int i = 0; i < 9; i++) {
             num = (int) (cpf.charAt(i) - 48);
             diminui = diminui - 1;
@@ -47,10 +45,12 @@ public class AdministradorBusiness {
             dig1 = (char) (resultado + 48);
         }
 
+
         ///////////////////////////////////////////////////////////////
 
         int diminui2 = 12, resultado2 = 0;
         int soma2 = 0, num2;
+
 
         for (int j = 0; j < 10; j++) {
             num2 = (int) (cpf.charAt(j) - 48);
@@ -66,21 +66,20 @@ public class AdministradorBusiness {
             dig2 = (char) (resultado2 + 48);
         }
 
-        if (dig1 == cpf.charAt(9) && (dig2 == cpf.charAt(10))) {
-            return (true);
-        } else {
-            return (false);
+        if (dig1 == cpf.charAt(9) && (dig2 == cpf.charAt(10))) {} else {
+            throw new NullPointerException();
         }
     }
 
-    public Boolean validarTel(String telefone){
+    public void validarTel(String tel) throws NullPointerException {
+
         Boolean info;
-        if ((telefone == null) || (telefone.length() != 14)) {
-            info = false;
+
+        if ((tel == null) || (tel.length() != 14)) {
+            throw new NullPointerException();
         } else {
             info = true;
         }
-        return info;
     }
 
     public Boolean validarData(String data){
@@ -96,43 +95,53 @@ public class AdministradorBusiness {
         return info;
     }
 
-    public Boolean validarRoot(String admRoot, String senhaRoot){
+    public void validarRoot(String admRoot, String senhaRoot) throws NullPointerException{
+
         String adm = "admin";
 
-        Boolean info = true;
-
         if(!admRoot.equals(adm)){
-            info = false;
+            throw new NullPointerException();
         }else{
             if(!senhaRoot.equals(adm)){
-                info = false;
-            }else{
-                info = true;
-            }
+                throw new NullPointerException();
+            }else{}
         }
-        return info;
     }
 
     public void validarAdmnistrador(Administrador administradorBuffer){
 
-        valorLogin = validarLogin(administradorBuffer.getLogin());
-        valorEmail = validarEmail(administradorBuffer.getEmail());
-        valorCPF = validarCPF(administradorBuffer.getCpf());
-        valorTel = validarTel(administradorBuffer.getTelefone());
-        valorData = validarData(administradorBuffer.getData());
 
-        if(valorEmail != true || valorCPF != true || valorTel != true || valorData != true){
+        try {
+            validarLogin(administradorBuffer.getLogin());
+            validarEmail(administradorBuffer.getEmail());
+            validarCPF(administradorBuffer.getCpf());
+            validarTel(administradorBuffer.getTelefone());
+            validarData(administradorBuffer.getData());
+            av.mensagemCadastro();
+            AdminDAO.salvarAdmin(administradorBuffer);
+
+        }catch (NullPointerException e){
             av.mensagemErro();
         }
 
-        if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
 
-            if(administradorBuffer.getLogin() == "admin"){
-                AdminDAO.salvarAdmin(administradorBuffer);
-            }else{
-                av.mensagemCadastro();
-                AdminDAO.salvarAdmin(administradorBuffer);
-            }
-        }
+
+
+
+
+
+
+//        if(valorEmail != true || valorCPF != true || valorTel != true || valorData != true){
+//
+//        }
+//
+//        if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
+//
+//            if(administradorBuffer.getLogin() == "admin"){
+//                AdminDAO.salvarAdmin(administradorBuffer);
+//            }else{
+//
+//            }
+//        }
     }
 }

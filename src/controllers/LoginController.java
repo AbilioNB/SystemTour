@@ -13,8 +13,6 @@ public class LoginController {
 
     @FXML
     private TextField admROOT, senhaROOT;
-    private Button btnLogin;
-    private Boolean retorno;
 
     @FXML
     protected void buttonAction(javafx.event.ActionEvent actionEvent) throws IOException {
@@ -25,11 +23,10 @@ public class LoginController {
         String loginroot = admROOT.getText();
         String senharoot = senhaROOT.getText();
 
-        retorno = ab.validarRoot(loginroot, senharoot);
-        if(retorno == true){
+        try{
+            ab.validarRoot(loginroot, senharoot);
             Main.trocaTela("Entrar");
-        }
-        if(retorno == false){
+        }catch (NullPointerException e){
             av.mensagemErroLogin();
         }
     }

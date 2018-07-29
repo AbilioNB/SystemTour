@@ -25,9 +25,6 @@ public class Main extends Application {
         primaryStage.setScene(loginScane);
         primaryStage.show();
 
-        AdministradorController cadastroRoot = new AdministradorController();
-        cadastroRoot.rootADMCADASTRO();
-
     }
     public static void trocaTela(String tela) throws IOException {
         switch (tela){

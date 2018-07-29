@@ -10,9 +10,6 @@ import java.util.Date;
 public class ViagemBusiness {
 
     ViagemView vv = new ViagemView();
-
-
-
     public Boolean validarData(String data){
         boolean info = true;
 
@@ -26,18 +23,12 @@ public class ViagemBusiness {
         return info;
     }
 
-
-    public Boolean validarOrigemDestino(Viagem v){
-
-        Boolean info;
+    public void validarOrigemDestino(Viagem v) throws NullPointerException{
 
         if(v.getOrigem() == null || v.getDestino()== null){
             vv.mensagemErroOrigemeDestino();
-            info = false;
-        } else {
-            info = true;
-        }
-    return info;
+            throw new NullPointerException();
+        } else{}
     }
 
     public void adicionarDespesa(Viagem viagem){
@@ -62,25 +53,16 @@ public class ViagemBusiness {
 
     public void validarViagem(Viagem viagem){
 
-        ViagensDAO salvar = new ViagensDAO();
-
-        boolean dataPartida, dataChegada, origemEDestino;
-
-        dataPartida = validarData(viagem.getPartida());
-        dataChegada = validarData(viagem.getChegada());
-
-        pacoteFamilia(viagem);
-        adicionarDespesa(viagem);
-
-
-
-        if(dataPartida == true && dataChegada == true){
+        try {
+            validarData(viagem.getPartida());
+            validarData(viagem.getChegada());
+            validarOrigemDestino(viagem);
+            pacoteFamilia(viagem);
+            adicionarDespesa(viagem);
             viagem.setAtivo(1);
-            salvar.salvarViagem(viagem);
-            System.out.println(viagem.getValor());
-        }
+            ViagensDAO.salvarViagem(viagem);
 
-        if(dataPartida == false || dataChegada == false){
+        }catch (NullPointerException e){
             vv.mensagemErroData();
         }
     }
