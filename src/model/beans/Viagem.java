@@ -12,8 +12,8 @@ public class Viagem {
     private int qtVagas;
     private double valor;
     private int ativo;
-    private int despesa = 40;
-    private int pessoas = 3;
+    private int despesa;
+    private int pessoas;
 
     public String getVagas() {
         return vagas;

@@ -4,8 +4,10 @@ import business.FinanceiroBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.beans.Financeiro;
+import model.persistence.ClienteDAO;
 import sample.Main;
 import java.io.IOException;
+import java.util.Set;
 
 public class FinanceiroController {
 
@@ -19,20 +21,18 @@ public class FinanceiroController {
 
         Financeiro bufferFinanceiro = new Financeiro();
 
+        boolean check;
+
         bufferFinanceiro.setCpfContrato(cpfFinanceiro.getText());
         bufferFinanceiro.setNumeroContrato(contratoFinanceiro.getText());
 
-//        bufferFinanceiro.validar();
-//
-//        boolean check;
-//
-//        check = fb.validar(bufferFinanceiro);
-//
-//        if(check == false){
-//            Main.trocaTela("Pagar");
-//        }else{
-//            System.out.println("hello");
-//        }
+        Set<String> cpf = ClienteDAO.retornaCPF();
+        check = fb.validarFinanceiro(bufferFinanceiro, cpf);
+
+        if(check == true){
+            Main.trocaTela("Pagar");
+        }
+
     }
     @FXML
     protected void buttonVoltar(javafx.event.ActionEvent actionEvent)throws IOException {

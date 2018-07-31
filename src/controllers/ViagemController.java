@@ -40,8 +40,6 @@ public class ViagemController implements Initializable {
     private static double valorPassar;
     private static String idPassar;
 
-    Viagem v = new Viagem();
-
     private List<ViagemExibir>ListViagem = new ArrayList();
     private ObservableList<ViagemExibir> observableListViagem;
 

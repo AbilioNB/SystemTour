@@ -3,7 +3,6 @@ package model.beans;
 public class Financeiro {
 
     private String cpfContrato;
-    private String cpfCliente;
     private String numeroContrato;
     private String dataPagamento;
     private Double valorPago;
@@ -14,14 +13,6 @@ public class Financeiro {
 
     public void setCpfContrato(String cpfContrato) {
         this.cpfContrato = cpfContrato;
-    }
-
-    public String getCpfCliente() {
-        return cpfCliente;
-    }
-
-    public void setCpfCliente(String cpfCliente) {
-        this.cpfCliente = cpfCliente;
     }
 
     public String getNumeroContrato() {

@@ -31,34 +31,12 @@ public class ViagemBusiness {
         } else{}
     }
 
-    public void adicionarDespesa(Viagem viagem){
-
-        if(viagem.getDespesa() == 0){
-            return;
-        }else{
-            double despesa = viagem.getValor() - (viagem.getDespesa() * viagem.getPessoas());
-            viagem.setValor(despesa);
-        }
-    }
-
-    public void pacoteFamilia(Viagem viagem){
-
-        if(viagem.getPessoas() == 0){
-            return;
-        }else {
-            double valorTotal = viagem.getValor() * viagem.getPessoas();
-            viagem.setValor(valorTotal);
-        }
-    }
-
     public void validarViagem(Viagem viagem){
 
         try {
             validarData(viagem.getPartida());
             validarData(viagem.getChegada());
             validarOrigemDestino(viagem);
-            pacoteFamilia(viagem);
-            adicionarDespesa(viagem);
             viagem.setAtivo(1);
             ViagensDAO.salvarViagem(viagem);
 

@@ -5,7 +5,7 @@ import sample.Main;
 
 import java.io.IOException;
 
-public class pagarController {
+public class PagarController {
     @FXML
     protected void buttonPagar(javafx.event.ActionEvent actionEvent)throws IOException {
         Main.trocaTela("Entrar");

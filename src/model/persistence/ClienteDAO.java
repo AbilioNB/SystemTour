@@ -2,6 +2,8 @@ package model.persistence;
 
 import model.beans.Cliente;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class ClienteDAO {
 
@@ -20,4 +22,15 @@ public class ClienteDAO {
         repositorioCliente.remove(user.getCpf());
     }
 
+    public static Set<String> retornaCPF() {
+
+        Set<String> cpfs = repositorioCliente.keySet();
+//        for(Iterator<String> iterator = cpfs.iterator(); iterator.hasNext();){
+//            String cpf = iterator.next();
+//            if(cpf != null){
+//
+//            }
+//        }
+        return cpfs;
+    }
 }

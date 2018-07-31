@@ -1,20 +1,18 @@
 package model.beans;
-import java.util.ArrayList;
 
 public class Pacote extends Viagem {
 
-    ArrayList<Cliente> nomeCpf = new ArrayList();
-
+    private String cpfTitular;
     private double taxaDesconto;
     private Viagem viagemPacote;
     private int qtdClientes;
 
-    public ArrayList <Cliente> getNomeCpf() {
-        return nomeCpf;
+    public String getCpfTitular() {
+        return cpfTitular;
     }
 
-    public void setNomeCpf(ArrayList <Cliente> nomeCpf) {
-        this.nomeCpf = nomeCpf;
+    public void setCpfTitular(String cpfTitular) {
+        this.cpfTitular = cpfTitular;
     }
 
     public double getTaxaDesconto() {

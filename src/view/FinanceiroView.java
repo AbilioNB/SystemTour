@@ -1,4 +1,4 @@
-package view.img;
+package view;
 
 import javafx.scene.control.Alert;
 
