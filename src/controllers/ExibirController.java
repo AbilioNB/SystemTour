@@ -32,6 +32,10 @@ public class ExibirController implements Initializable {
     @FXML
     private Button buttonRemover;
 
+    private String nomePassar;
+    private String telPassar;
+    private String cpfPassar;
+
     private List<ClienteExibir>lisTCliente = new ArrayList();
     private ObservableList<ClienteExibir>observableListCliente;
 
@@ -61,8 +65,20 @@ public class ExibirController implements Initializable {
     }
     public void clienteSelecionado(ClienteExibir cliente){
         if (cliente != null){
+            nomePassar = cliente.getNomeEx();
+            telPassar = cliente.getTelefoneEx();
+            cpfPassar = cliente.getCpfEx();
             System.out.println("Cliente selecionado foi: " + cliente.getNomeEx());
         }
+    }
+    public String getNomePassar(){
+        return nomePassar;
+    }
+    public String getTelPassar(){
+        return telPassar;
+    }
+    public String getCpfPassar(){
+        return cpfPassar;
     }
     @FXML
     protected void buttonExcluir (){
@@ -78,6 +94,8 @@ public class ExibirController implements Initializable {
     }
     @FXML
     protected void buttonEditar (javafx.event.ActionEvent actionEvent){
-        // Main.trocaTela("");
+        System.out.println(getNomePassar());
+        System.out.println(getTelPassar());
+        System.out.println(getCpfPassar());
     }
 }

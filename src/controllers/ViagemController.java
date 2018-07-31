@@ -34,11 +34,11 @@ public class ViagemController implements Initializable {
     @FXML
     private Button buttonRemover;
 
-    private String destinoPassar;
-    private String dataPassar;
-    private int vagasPassar;
-    private double valorPassar;
-    private String idPassar;
+    private static String destinoPassar;
+    private static String dataPassar;
+    private static int vagasPassar;
+    private static double valorPassar;
+    private static String idPassar;
 
     Viagem v = new Viagem();
 
@@ -87,26 +87,22 @@ public class ViagemController implements Initializable {
         }
     }
     @FXML
-    protected void buttonVender(){
-        System.out.println(getDestinoPassar());
-        System.out.println(getDataPassar());
-        System.out.println(getVagasPassar());
-        System.out.println(getValorPassar());
-        System.out.println(getIdPassar());
+    protected void buttonPacote()throws IOException{
+        Main.trocaTela("Vender");
     }
-    public String getDestinoPassar(){
+    public static String getDestinoPassar(){
         return destinoPassar;
     }
-    public String getDataPassar(){
+    public static String getDataPassar(){
         return dataPassar;
     }
-    public int getVagasPassar(){
+    public static int getVagasPassar(){
         return vagasPassar;
     }
-    public double getValorPassar(){
+    public static double getValorPassar(){
         return valorPassar;
     }
-    public String getIdPassar(){
+    public static String getIdPassar(){
         return idPassar;
     }
 

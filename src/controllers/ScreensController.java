@@ -17,6 +17,7 @@ public class ScreensController {
     private static Scene cadViagem;
     private static Scene financeiro;
     private static Scene pagarScene;
+    private static Scene venderScene;
 
 
     public static Scene pegarCena(String scene) throws IOException {
@@ -49,6 +50,10 @@ public class ScreensController {
                 Parent fxmlPagar = FXMLLoader.load(ScreensController.class.getResource("../view/pagar.fxml"));
                 pagarScene = new Scene(fxmlPagar);
                 return pagarScene;
+            case "Vender":
+                Parent fxmlVender = FXMLLoader.load(ScreensController.class.getResource("../view/venderPacote.fxml"));
+                venderScene = new Scene(fxmlVender);
+                return venderScene;
         }
         return null;
     }

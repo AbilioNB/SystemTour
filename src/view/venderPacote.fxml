@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="253.0" prefWidth="330.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.venderPacoteController">
+   <children>
+      <TabPane prefHeight="253.0" prefWidth="330.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Vender Pacote">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" text="Valor Unitário">
+                           <graphic>
+                              <TextField />
+                           </graphic>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="56.0" nodeOrientation="RIGHT_TO_LEFT" text="Taxa de Desconto">
+                           <graphic>
+                              <TextField />
+                           </graphic>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="94.0" nodeOrientation="RIGHT_TO_LEFT" text="Quantidade de Clientes">
+                           <graphic>
+                              <TextField />
+                           </graphic>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="138.0" nodeOrientation="RIGHT_TO_LEFT" text="CPF do Titular">
+                           <graphic>
+                              <TextField />
+                           </graphic>
+                        </Label>
+                        <Button layoutX="261.0" layoutY="178.0" mnemonicParsing="false" onAction="#buttonVoltar" text="Vender" />
+                        <Button layoutX="14.0" layoutY="178.0" mnemonicParsing="false"  onAction="#buttonEnviar"  text="Voltar" />
+                        <Button layoutX="306.0" layoutY="8.0" mnemonicParsing="false" onAction="#buttonTestar" prefHeight="7.0" prefWidth="21.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
