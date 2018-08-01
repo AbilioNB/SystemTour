@@ -6,6 +6,14 @@ public class Pacote extends Viagem {
     private double taxaDesconto;
     private Viagem viagemPacote;
     private int qtdClientes;
+    private int idPassar;
+
+    public int getid(){
+        return idPassar;
+    }
+    public void setIdPassar(int valor){
+        idPassar = valor;
+    }
 
     public String getCpfTitular() {
         return cpfTitular;

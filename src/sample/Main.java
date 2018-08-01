@@ -17,7 +17,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         stage = primaryStage;
-        primaryStage.setTitle("Gerencia Tour");
+        primaryStage.setTitle("System Tour");
 
         Parent fxmllogin = FXMLLoader.load(getClass().getResource("../view/login.fxml"));
         loginScane = new Scene(fxmllogin);

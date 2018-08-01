@@ -8,6 +8,7 @@ import model.beans.Pacote;
 import sample.Main;
 
 import java.io.IOException;
+import java.util.Random;
 
 public class VenderPacoteController {
 
@@ -18,7 +19,7 @@ public class VenderPacoteController {
 
     @FXML
     protected void buttonVoltar(ActionEvent actionEvent) throws IOException {
-        Main.trocaTela("Entrar");
+        Main.trocaTela("CriarViagem");
     }
 
     @FXML
@@ -48,15 +49,20 @@ public class VenderPacoteController {
         check = vpb.validarPacote(buffer);
         if(check == true){
             Main.trocaTela("Entrar");
+            Random gerarId = new Random();
+            int geradorId = gerarId.nextInt(101);
+            String id = Integer.toString(geradorId);
+            buffer.setIdPassar(geradorId);
+            System.out.println(buffer.getid());
         }
     }
 
     @FXML
     protected void buttonTestar(ActionEvent actionEvent) {
-        System.out.println(ViagemController.getDestinoPassar());
-        System.out.println(ViagemController.getDataPassar());
-        System.out.println(ViagemController.getVagasPassar());
-        System.out.println(ViagemController.getValorPassar());
-        System.out.println(ViagemController.getIdPassar());
+        System.out.println("Viagem para: " + ViagemController.getDestinoPassar());
+        System.out.println("Data de partida: " + ViagemController.getDataPassar());
+        System.out.println("Quantidade de vagas: " + ViagemController.getVagasPassar());
+        System.out.println("Valor Unitério: " + ViagemController.getValorPassar());
+        System.out.println("Id da viagem: " + ViagemController.getIdPassar());
     }
 }

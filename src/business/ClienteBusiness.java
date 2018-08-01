@@ -90,6 +90,8 @@ public class ClienteBusiness {
         try {
             Date dataPronta = formato.parse(data);
         } catch (ParseException e) {
+            //TODO ALTERAR EXCEÇÃO
+            System.out.println(e.getMessage());
             info = false;
         }
         return info;
