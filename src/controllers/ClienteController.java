@@ -1,6 +1,6 @@
 package controllers;
 
-import business.ClienteBusiness;
+import systemtour.ClienteBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.beans.Cliente;

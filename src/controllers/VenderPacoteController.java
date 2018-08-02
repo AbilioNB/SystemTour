@@ -1,6 +1,6 @@
 package controllers;
 
-import business.VenderPacoteBusiness;
+import systemtour.VenderPacoteBusiness;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -8,12 +8,11 @@ import model.beans.Pacote;
 import sample.Main;
 
 import java.io.IOException;
-import java.util.Random;
 
 public class VenderPacoteController {
 
     @FXML
-    TextField desconto, qtdClientes, cpfTitular, valorDespesa;
+    TextField desconto, qtdClientes, cpfTitular, valorParcelas;
 
     VenderPacoteBusiness vpb = new VenderPacoteBusiness();
 
@@ -28,13 +27,14 @@ public class VenderPacoteController {
 
         Pacote buffer = new Pacote();
 
+        buffer.setDestinoPassar(ViagemController.getDestinoPassar());
+
         buffer.setTaxaDesconto(Double.parseDouble(desconto.getText()));
 
-        String despesa = valorDespesa.getText();
-        try{
-            int despesavalor = Integer.parseInt(despesa);
-            buffer.setDespesa(despesavalor);
-        }catch (NumberFormatException e){}
+        String parcelas = valorParcelas.getText();
+        int parcelasvalor = Integer.parseInt(parcelas);
+        buffer.setParcelas(parcelasvalor);
+
 
 
         String vagas = qtdClientes.getText();
@@ -46,14 +46,12 @@ public class VenderPacoteController {
         buffer.setCpfTitular(cpfTitular.getText());
 
 
-        check = vpb.validarPacote(buffer);
+
+
+        check = vpb.salvarPacote(buffer, ViagemController.getValorPassar());
+
         if(check == true){
             Main.trocaTela("Entrar");
-            Random gerarId = new Random();
-            int geradorId = gerarId.nextInt(10001);
-            String id = Integer.toString(geradorId);
-            buffer.setIdPassar(geradorId);
-            System.out.println(buffer.getid());
         }
     }
 

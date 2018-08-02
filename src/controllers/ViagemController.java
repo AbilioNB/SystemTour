@@ -1,6 +1,6 @@
 package controllers;
 
-import business.ViagemBusiness;
+import systemtour.ViagemBusiness;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -54,9 +54,6 @@ public class ViagemController implements Initializable {
                 observable, oldValue, newValue)-> viagemSelecionada(newValue));
     }
     public void carregarListaViagem(){
-
-
-
         vDestino.setCellValueFactory(new PropertyValueFactory<>("destinoEx"));
         vDate.setCellValueFactory(new PropertyValueFactory<>("partidaEx"));
         vVagas.setCellValueFactory(new PropertyValueFactory<>("qtVagasEx"));
@@ -147,6 +144,11 @@ public class ViagemController implements Initializable {
             vv.mensagemErroValorUnitario();
             return;
         }
+//        String despesa = valorDespesa.getText();
+//        try{
+//            int despesavalor = Integer.parseInt(despesa);
+//            buffer.setDespesa(Double.valueOf(despesavalor));
+//        }catch (NumberFormatException e){}
 
         Random gerarId = new Random();
         int geradorId = gerarId.nextInt(10001);

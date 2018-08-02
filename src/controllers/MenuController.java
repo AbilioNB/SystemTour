@@ -26,6 +26,6 @@ public class MenuController  {
     }
     @FXML
     protected void buttonPagar(javafx.event.ActionEvent actionEvent) throws IOException {
-        Main.trocaTela("Financeiro");
+        Main.trocaTela("Pagamento");
     }
 }

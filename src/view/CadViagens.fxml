@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="273.0" prefWidth="543.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="controllers.ViagemController">
+<AnchorPane prefHeight="273.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ViagemController">
   <children>
     <TabPane prefHeight="294.0" prefWidth="551.0" tabClosingPolicy="UNAVAILABLE">
       <tabs>
@@ -25,11 +25,11 @@
                     <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                   </columnResizePolicy>
                   <columns>
-                    <TableColumn prefWidth="75.0" text="Destino" fx:id="vDestino" />
-                    <TableColumn prefWidth="95.0" text="Data de Partida" fx:id="vDate" />
-                    <TableColumn prefWidth="112.0" text="Vagas Disponíveis" fx:id="vVagas" />
-                    <TableColumn prefWidth="93.0" text="Valor Unitário" fx:id="vValor" />
-                    <TableColumn prefWidth="75.0" text="ID" fx:id="vID" />
+                    <TableColumn fx:id="vDestino" prefWidth="75.0" text="Destino" />
+                    <TableColumn fx:id="vDate" prefWidth="95.0" text="Data de Partida" />
+                    <TableColumn fx:id="vVagas" prefWidth="112.0" text="Vagas Disponíveis" />
+                    <TableColumn fx:id="vValor" prefWidth="93.0" text="Valor Unitário" />
+                    <TableColumn fx:id="vID" prefWidth="75.0" text="ID" />
                   </columns>
                 </TableView>
                 <Button layoutX="446.0" layoutY="38.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" text="Editar Viagem" />
@@ -79,6 +79,11 @@
                     <TextField fx:id="unitarioViagem" prefHeight="25.0" prefWidth="177.0" />
                   </graphic>
                 </Label>
+                        <Label layoutX="284.0" layoutY="161.0" nodeOrientation="RIGHT_TO_LEFT" text="Total de Despesas:">
+                           <graphic>
+                              <TextField />
+                           </graphic>
+                        </Label>
                 <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonVoltar" prefHeight="32.0" prefWidth="75.0" text="Menu" />
                 <Button layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonEnviar" prefHeight="32.0" prefWidth="75.0" text="Enviar" />
               </children>

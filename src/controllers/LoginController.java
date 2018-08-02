@@ -1,8 +1,7 @@
 package controllers;
 
-import business.AdministradorBusiness;
+import systemtour.AdministradorBusiness;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import sample.Main;
 import view.AdministradorView;

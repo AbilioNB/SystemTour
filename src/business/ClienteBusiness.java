@@ -1,4 +1,4 @@
-package business;
+package systemtour;
 
 import model.beans.Cliente;
 import model.persistence.ClienteDAO;
