@@ -1,10 +1,8 @@
 package model.persistence;
 
 import model.beans.Cliente;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+
+import java.util.*;
 
 public class ClienteDAO {
 
@@ -27,14 +25,29 @@ public class ClienteDAO {
     public static Set<String> retornaCPF() {
 
         Set<String> cpfs = repositorioCliente.keySet();
-//        for(Iterator<String> iterator = cpfs.iterator(); iterator.hasNext();){
-//            String cpf = iterator.next();
-//            if(cpf != null){
-//
-//            }
-//        }
         return cpfs;
     }
+
+    //Todos os clientes
+    public static List<Cliente> pegarNomes(){
+        List<Cliente> listClientes = new ArrayList<Cliente>();
+
+        for (Cliente buffer:  repositorioCliente.values()) {
+            listClientes.add(buffer);
+        }
+        return listClientes;
+    }
+    //Verificar CPF
+    public static boolean buscaCpf (String buffer){
+
+        return repositorioCliente.containsKey(buffer);
+    }
+    //Retornar 1 cliente baseado no cpf 
+    public static Cliente buscarCliente( String cpf){
+        return repositorioCliente.get(cpf);
+
+    }
+
 
 
 }
