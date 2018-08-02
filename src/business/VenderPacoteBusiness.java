@@ -1,6 +1,7 @@
 package business;
 
 import model.beans.Pacote;
+import model.persistence.PacoteDAO;
 
 public class VenderPacoteBusiness {
 
@@ -13,6 +14,9 @@ public class VenderPacoteBusiness {
                 adicionarDespesa(pacote);
                 vagasDisponiveis(pacote);
                 info = true;
+                if (info == true){
+                    PacoteDAO.salvarPacote(pacote);
+                }
             }catch (NullPointerException e){
                 //TODO MOSTRAR MENSAGEM DE ERRO
                 info = false;

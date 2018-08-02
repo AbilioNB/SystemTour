@@ -10,6 +10,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.beans.Viagem;
+import model.persistence.ViagensDAO;
 import sample.Main;
 import view.ViagemExibir;
 import view.ViagemView;
@@ -62,12 +63,12 @@ public class ViagemController implements Initializable {
         vValor.setCellValueFactory(new PropertyValueFactory<>("valorEx"));
         vID.setCellValueFactory(new PropertyValueFactory<>("idEx"));
 
-        ViagemExibir v1 = new ViagemExibir("Disney", "01/09/2018",70,50.00 , "3435");
-        ViagemExibir v2 = new ViagemExibir("Moreno","06/10/2018",80,350.00 ,"5475");
-        ViagemExibir v3 = new ViagemExibir("Galego","20/11/2018",90,500.00 ,"4478");
+        for (Viagem buffer: ViagensDAO.pegarViagem()){
+            ViagemExibir v1 = new ViagemExibir(buffer.getDestino(), buffer.getPartida(), buffer.getQtVagas(), buffer.getValor(), buffer.getId());
+            ListViagem.add(v1);
+        }
 
-        ListViagem.add(v1);
-        ListViagem.add(v2);
+        ViagemExibir v3 = new ViagemExibir("Galego","20/11/2018",90,500.00 ,"4478");
         ListViagem.add(v3);
 
         observableListViagem = FXCollections.observableArrayList(ListViagem);
@@ -108,8 +109,9 @@ public class ViagemController implements Initializable {
     protected void buttonRemover(){
         ViagemExibir viagem = vTable.getSelectionModel().getSelectedItem();
         if (viagem != null){
-            ViagemView.mensagemRemover(viagem.getDestinoEx());
             vTable.getItems().remove(viagem);
+            ViagensDAO.removerViagem(idPassar);
+            ViagemView.mensagemRemover(viagem.getDestinoEx());
         }
     }
 
@@ -147,7 +149,7 @@ public class ViagemController implements Initializable {
         }
 
         Random gerarId = new Random();
-        int geradorId = gerarId.nextInt(101);
+        int geradorId = gerarId.nextInt(10001);
         String id = Integer.toString(geradorId);
         bufferViagem.setId(id);
 

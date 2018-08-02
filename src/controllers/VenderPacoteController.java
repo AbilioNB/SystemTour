@@ -50,7 +50,7 @@ public class VenderPacoteController {
         if(check == true){
             Main.trocaTela("Entrar");
             Random gerarId = new Random();
-            int geradorId = gerarId.nextInt(101);
+            int geradorId = gerarId.nextInt(10001);
             String id = Integer.toString(geradorId);
             buffer.setIdPassar(geradorId);
             System.out.println(buffer.getid());

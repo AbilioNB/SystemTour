@@ -6,7 +6,7 @@ public class Pacote extends Viagem {
     private double taxaDesconto;
     private Viagem viagemPacote;
     private int qtdClientes;
-    private int idPassar;
+    private Integer idPassar;
 
     public int getid(){
         return idPassar;

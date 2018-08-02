@@ -7,6 +7,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import model.beans.Cliente;
+import model.persistence.ClienteDAO;
 import sample.Main;
 import view.ClienteExibir;
 import view.ClienteView;
@@ -50,13 +52,10 @@ public class ExibirController implements Initializable {
         cTelefone.setCellValueFactory(new PropertyValueFactory<>("telefoneEx"));
         cCPF.setCellValueFactory(new PropertyValueFactory<>("cpfEx"));
 
-        ClienteExibir c1 = new ClienteExibir("Gabriel", "(81)99999-9999", "70561283435");
-        ClienteExibir c2 = new ClienteExibir("Kelvin","(81)88888-8888","10835895475");
-        ClienteExibir c3 = new ClienteExibir("Abilio","(81)77777-7777","11487004478");
-
-        lisTCliente.add(c1);
-        lisTCliente.add(c2);
-        lisTCliente.add(c3);
+        for (Cliente buffer: ClienteDAO.pegarNomes()){
+            ClienteExibir c1 = new ClienteExibir(buffer.getNome(), buffer.getTelefone(),buffer.getCpf());
+            lisTCliente.add(c1);
+        }
 
         observableListCliente = FXCollections.observableArrayList(lisTCliente);
 
@@ -84,6 +83,7 @@ public class ExibirController implements Initializable {
     protected void buttonExcluir (){
         ClienteExibir cliente = cTable.getSelectionModel().getSelectedItem();
         if (cliente != null){
+            ClienteDAO.removerCliente(cpfPassar);
             ClienteView.mensagemRemover(cliente.getNomeEx());
             cTable.getItems().remove(cliente);
         }

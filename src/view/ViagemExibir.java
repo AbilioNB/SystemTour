@@ -12,7 +12,7 @@ public class ViagemExibir {
     private SimpleDoubleProperty valorEx;
     private SimpleStringProperty destinoEx;
 
-    public ViagemExibir(String destinoEx, String partidaEx, Integer vagasEx, Double valorEx, String idEx){
+    public ViagemExibir(String destinoEx, String partidaEx, int vagasEx, Double valorEx, String idEx){
         this.destinoEx = new SimpleStringProperty(destinoEx);
         this.partidaEx = new SimpleStringProperty(partidaEx);
         this.qtVagasEx = new SimpleIntegerProperty(vagasEx);

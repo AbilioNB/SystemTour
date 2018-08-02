@@ -16,18 +16,19 @@ public class ClienteDAO {
         //a partir daqui apagar
         System.out.println("Realmentefoi gravado!\n Numero de elementos no map :" + repositorioCliente.size() + "\n");
     }
-
     //remover cliente da lista
-    public static void removerCliente(Cliente user) {
-        repositorioCliente.remove(user.getCpf());
+    public static void removerCliente(String cpf) {
+        for (Cliente buffer: repositorioCliente.values()){
+            if (cpf == buffer.getCpf()){
+                repositorioCliente.remove(buffer.getCpf());
+            }
+        }
     }
-
     public static Set<String> retornaCPF() {
 
         Set<String> cpfs = repositorioCliente.keySet();
         return cpfs;
     }
-
     //Todos os clientes
     public static List<Cliente> pegarNomes(){
         List<Cliente> listClientes = new ArrayList<Cliente>();
@@ -47,7 +48,4 @@ public class ClienteDAO {
         return repositorioCliente.get(cpf);
 
     }
-
-
-
 }
