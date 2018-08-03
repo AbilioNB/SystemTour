@@ -1,4 +1,4 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,13 +12,10 @@ import model.beans.Pacote;
 import model.persistence.PacoteDAO;
 import sample.Main;
 import view.PacoteExibir;
-import view.PacoteView;
 
 import java.io.IOException;
 import java.net.URL;
-import java.nio.Buffer;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -40,39 +37,47 @@ public class ExibirPacotesController implements Initializable {
     @FXML
     TextField cpfBucarEx;
 
-    private String destinoPass;
-    private Double valorPass;
-    private int parcelaPass;
-    private Double totalPass;
-    private String idPass;
+//    public static String cpf;
+//
+//    public static String getCpf() {
+//        cpf = cpfBucarEx.getText();
+//        return cpf;
+//    }
+
+
+    private static String destinoPass;
+    private static Double valorPass;
+    private static int parcelaPass;
+    private static Double totalPass;
+    private static String idPass;
 
     private boolean chave = true;
 
-    public String getDestinoPass() {
+    public static String getDestinoPass() {
         return destinoPass;
     }
     public void setDestinoPass(String destinoPass) {
         this.destinoPass = destinoPass;
     }
-    public Double getValorPass() {
+    public static Double getValorPass() {
         return valorPass;
     }
     public void setValorPass(Double valorPass) {
         this.valorPass = valorPass;
     }
-    public int getParcelaPass() {
+    public static int getParcelaPass() {
         return parcelaPass;
     }
     public void setParcelaPass(int parcelaPass) {
         this.parcelaPass = parcelaPass;
     }
-    public Double getTotalPass() {
+    public static Double getTotalPass() {
         return totalPass;
     }
     public void setTotalPass(Double totalPass) {
         this.totalPass = totalPass;
     }
-    public String getIdPass() {
+    public static String getIdPass() {
         return idPass;
     }
     public void setIdPass(String idPass) {
@@ -111,12 +116,7 @@ public class ExibirPacotesController implements Initializable {
                 ListPacote.add(v1);
             }
         }
-
-
-
-
         observableListPacote = FXCollections.observableArrayList(ListPacote);
-
         pTable.setItems(observableListPacote);
     }
 

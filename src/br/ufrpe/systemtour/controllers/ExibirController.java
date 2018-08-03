@@ -1,4 +1,4 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;

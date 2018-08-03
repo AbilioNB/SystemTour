@@ -1,7 +1,6 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
 import javafx.fxml.FXML;
-import javafx.stage.Stage;
 import sample.Main;
 
 import java.io.IOException;

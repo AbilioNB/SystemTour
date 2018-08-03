@@ -1,6 +1,6 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
-import business.ClienteBusiness;
+import br.ufrpe.systemtour.business.ClienteBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import model.beans.Cliente;

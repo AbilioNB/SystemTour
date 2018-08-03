@@ -1,6 +1,6 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
-import business.VenderPacoteBusiness;
+import br.ufrpe.systemtour.business.VenderPacoteBusiness;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

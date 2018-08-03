@@ -1,6 +1,6 @@
-package controllers;
+package br.ufrpe.systemtour.controllers;
 
-import business.ViagemBusiness;
+import br.ufrpe.systemtour.business.ViagemBusiness;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

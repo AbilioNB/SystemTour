@@ -1,4 +1,4 @@
-package business;
+package br.ufrpe.systemtour.business;
 
 import model.beans.Administrador;
 import model.persistence.AdminDAO;

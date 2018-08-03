@@ -12,8 +12,6 @@
       <entry name="!?*.kt" />
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
-    <bytecodeTargetLevel target="10">
-      <module name="SystemTour" target="10" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="10" />
   </component>
 </project>
