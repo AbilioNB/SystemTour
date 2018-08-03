@@ -16,6 +16,7 @@ import view.PacoteExibir;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -37,6 +38,45 @@ public class ExibirPacotesController implements Initializable {
     @FXML
     TextField cpfBucarEx;
 
+    private String destinoPass;
+    private Double valorPass;
+    private int parcelaPass;
+    private Double totalPass;
+    private String idPass;
+
+    private boolean chave = true;
+
+    public String getDestinoPass() {
+        return destinoPass;
+    }
+    public void setDestinoPass(String destinoPass) {
+        this.destinoPass = destinoPass;
+    }
+    public Double getValorPass() {
+        return valorPass;
+    }
+    public void setValorPass(Double valorPass) {
+        this.valorPass = valorPass;
+    }
+    public int getParcelaPass() {
+        return parcelaPass;
+    }
+    public void setParcelaPass(int parcelaPass) {
+        this.parcelaPass = parcelaPass;
+    }
+    public Double getTotalPass() {
+        return totalPass;
+    }
+    public void setTotalPass(Double totalPass) {
+        this.totalPass = totalPass;
+    }
+    public String getIdPass() {
+        return idPass;
+    }
+    public void setIdPass(String idPass) {
+        this.idPass = idPass;
+    }
+
     private List<PacoteExibir> ListPacote = new ArrayList();
     private ObservableList<PacoteExibir> observableListPacote;
 
@@ -47,6 +87,11 @@ public class ExibirPacotesController implements Initializable {
     }
     public void pacoteSelecionado(PacoteExibir pacote){
         if (pacote != null){
+            setDestinoPass(pacote.getDestinoEx());
+            setParcelaPass(pacote.getQtRestanteEx());
+            setValorPass(pacote.getValorParcelaEx());
+            setTotalPass(pacote.getValorTotalEx());
+            setIdPass(pacote.getIdEx());
             System.out.println("O Pacote " + pacote.getDestinoEx() + " foi selecionado");
         }
     }
@@ -73,7 +118,12 @@ public class ExibirPacotesController implements Initializable {
     }
 
     public void buttonPagar(ActionEvent actionEvent) throws IOException {
-        Main.trocaTela("Pagar");
+        //Main.trocaTela("Pagar");
+        System.out.println(getDestinoPass());
+        System.out.println(getValorPass());
+        System.out.println(getParcelaPass());
+        System.out.println(getTotalPass());
+        System.out.println(getIdPass());
     }
 
     public void buttonMenu(ActionEvent actionEvent) throws IOException {
@@ -81,6 +131,11 @@ public class ExibirPacotesController implements Initializable {
     }
 
     public void buttonBuscar(ActionEvent actionEvent) {
-        carregarListaPacote();
+        if (chave == true) {
+            pTable.refresh();
+            carregarListaPacote();
+            cpfBucarEx.clear();
+            chave = false;
+        }
     }
 }
