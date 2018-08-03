@@ -12,9 +12,11 @@ import model.beans.Pacote;
 import model.persistence.PacoteDAO;
 import sample.Main;
 import view.PacoteExibir;
+import view.PacoteView;
 
 import java.io.IOException;
 import java.net.URL;
+import java.nio.Buffer;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -104,11 +106,12 @@ public class ExibirPacotesController implements Initializable {
         pId.setCellValueFactory(new PropertyValueFactory<>("idEx"));
 
         for (Pacote buffer: PacoteDAO.pegarPacote()){
-            if (cpfBucarEx.getText().equals(buffer.getCpfTitular())){
+            if (cpfBucarEx.getText().equals(buffer.getCpfTitular()) && buffer.getParcelas() > 0){
                 PacoteExibir v1 = new PacoteExibir(buffer.getDestinoPassar(), buffer.getValorParcelado(), buffer.getParcelas(), buffer.getValorTotal(), buffer.getidPassar());
                 ListPacote.add(v1);
             }
         }
+
 
 
 
@@ -118,7 +121,7 @@ public class ExibirPacotesController implements Initializable {
     }
 
     public void buttonPagar(ActionEvent actionEvent) throws IOException {
-        //Main.trocaTela("Pagar");
+        Main.trocaTela("Pagar");
         System.out.println(getDestinoPass());
         System.out.println(getValorPass());
         System.out.println(getParcelaPass());

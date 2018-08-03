@@ -1,5 +1,6 @@
 package controllers;
 
+import sample.Main;
 import systemtour.FinanceiroBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
@@ -18,5 +19,6 @@ public class FinanceiroController {
     }
     @FXML
     protected void buttonVoltar(javafx.event.ActionEvent actionEvent)throws IOException {
+        Main.trocaTela("Entrar");
     }
 }
