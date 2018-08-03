@@ -1,7 +1,7 @@
 package controllers;
 
 import sample.Main;
-import systemtour.FinanceiroBusiness;
+import business.FinanceiroBusiness;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 

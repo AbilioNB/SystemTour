@@ -1,6 +1,6 @@
 package controllers;
 
-import systemtour.VenderPacoteBusiness;
+import business.VenderPacoteBusiness;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;

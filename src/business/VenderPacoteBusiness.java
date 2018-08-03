@@ -1,4 +1,4 @@
-package systemtour;
+package business;
 
 import model.beans.Pacote;
 import model.persistence.PacoteDAO;

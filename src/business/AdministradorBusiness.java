@@ -1,4 +1,4 @@
-package systemtour;
+package business;
 
 import model.beans.Administrador;
 import model.persistence.AdminDAO;
@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class AdministradorBusiness {
 
-    private boolean valorLogin, valorEmail, valorCPF, valorTel, valorData;
     AdministradorView av = new AdministradorView();
 
     public Boolean validarLogin(String login){
@@ -110,7 +109,6 @@ public class AdministradorBusiness {
 
     public void validarAdmnistrador(Administrador administradorBuffer){
 
-
         try {
             validarLogin(administradorBuffer.getLogin());
             validarEmail(administradorBuffer.getEmail());
@@ -123,25 +121,5 @@ public class AdministradorBusiness {
         }catch (NullPointerException e){
             av.mensagemErro();
         }
-
-
-
-
-
-
-
-
-//        if(valorEmail != true || valorCPF != true || valorTel != true || valorData != true){
-//
-//        }
-//
-//        if(valorLogin == true && valorEmail == true && valorCPF == true && valorTel == true && valorData == true){
-//
-//            if(administradorBuffer.getLogin() == "admin"){
-//                AdminDAO.salvarAdmin(administradorBuffer);
-//            }else{
-//
-//            }
-//        }
     }
 }

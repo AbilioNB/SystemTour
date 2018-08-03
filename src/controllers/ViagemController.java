@@ -1,6 +1,6 @@
 package controllers;
 
-import systemtour.ViagemBusiness;
+import business.ViagemBusiness;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
