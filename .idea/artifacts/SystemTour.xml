@@ -1,6 +1,10 @@
 <component name="ArtifactManager">
   <artifact type="javafx" name="SystemTour">
+<<<<<<< HEAD
     <output-path />
+=======
+    <output-path>$PROJECT_DIR$/target/artifacts/SystemTour</output-path>
+>>>>>>> c2609745c11d5477326836fb467c4ca84587ab47
     <properties id="javafx-properties">
       <options>
         <option name="appClass" value="sample.Main" />
@@ -14,9 +18,12 @@
     <root id="root">
       <element id="archive" name="SystemTour.jar">
         <element id="module-output" name="SystemTour" />
+<<<<<<< HEAD
         <element id="directory" name="META-INF">
           <element id="file-copy" path="$PROJECT_DIR$/target/META-INF/MANIFEST.MF" />
         </element>
+=======
+>>>>>>> c2609745c11d5477326836fb467c4ca84587ab47
       </element>
     </root>
   </artifact>

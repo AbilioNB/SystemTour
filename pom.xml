@@ -17,6 +17,7 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+<<<<<<< HEAD
             <plugin>
                 <groupId>com.zenjava</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -49,6 +50,8 @@
                     </descriptorRefs>
                 </configuration>
             </plugin>
+=======
+>>>>>>> c2609745c11d5477326836fb467c4ca84587ab47
         </plugins>
     </build>
 
@@ -80,4 +83,10 @@
             <version>5.1.6</version>
         </dependency>
     </dependencies>
+<<<<<<< HEAD
+=======
+    <!--<build>-->
+        <!---->
+    <!--</build>-->
+>>>>>>> c2609745c11d5477326836fb467c4ca84587ab47
 </project>
