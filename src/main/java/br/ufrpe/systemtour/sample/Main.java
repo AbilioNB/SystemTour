@@ -1,6 +1,7 @@
 package br.ufrpe.systemtour.sample;
 
 import br.ufrpe.systemtour.controllers.ScreensController;
+import br.ufrpe.systemtour.controllers.
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
