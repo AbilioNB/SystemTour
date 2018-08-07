@@ -44,9 +44,6 @@ public class ClienteBusiness {
                 dig1 = (char) (resultado + 48);
             }
 
-
-        ///////////////////////////////////////////////////////////////
-
         int diminui2 = 12, resultado2 = 0;
         int soma2 = 0, num2;
 
