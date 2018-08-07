@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.systemtour.controllers.MenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.MenuController">
    <children>
       <Pane prefHeight="267.0" prefWidth="401.0">
          <children>
@@ -36,8 +36,7 @@
                </font>
             </Button>
             <Button layoutX="235.0" layoutY="79.0" mnemonicParsing="false" onAction="#buttonCadViagem" prefHeight="32.0" prefWidth="80.0" text="Viagens" />
-            <Button layoutX="235.0" layoutY="118.0" mnemonicParsing="false" onAction="#buttonPagar" prefHeight="32.0" prefWidth="80.0" text="Pagamento" />
-            <Button layoutX="235.0" layoutY="161.0" mnemonicParsing="false" onAction="#buttonFinanceiro" prefHeight="32.0" prefWidth="80.0" text="Financeiro" />
+            <Button layoutX="235.0" layoutY="118.0" mnemonicParsing="false" onAction="#buttonPagar" prefHeight="32.0" prefWidth="80.0" text="Financeiro" />
          </children>
       </Pane>
    </children>

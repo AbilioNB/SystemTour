@@ -12,7 +12,7 @@ public class Viagem {
     private int qtVagas;
     private double valor;
     private int ativo;
-    private Double despesa;
+    private int despesa;
     private int pessoas;
 
     public String getVagas() {
@@ -95,11 +95,11 @@ public class Viagem {
         this.ativo = ativo;
     }
 
-    public Double getDespesa() {
+    public int getDespesa() {
         return despesa;
     }
 
-    public void setDespesa(Double despesa) {
+    public void setDespesa(int despesa) {
         this.despesa = despesa;
     }
 

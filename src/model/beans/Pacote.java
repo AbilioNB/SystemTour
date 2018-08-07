@@ -2,47 +2,16 @@ package model.beans;
 
 public class Pacote extends Viagem {
 
-    private String destinoPassar;
     private String cpfTitular;
     private double taxaDesconto;
+    private Viagem viagemPacote;
     private int qtdClientes;
-    private String idPassar;
-    private int parcelas;
-    private double valorParcelado;
-    private Double valorTotal;
+    private int idPassar;
 
-    public double getValorParcelado() {
-        return valorParcelado;
-    }
-
-    public void setValorParcelado(double valorParcelado) {
-        this.valorParcelado = valorParcelado;
-    }
-
-    public String getDestinoPassar(){
-        return destinoPassar;
-    }
-    public void setDestinoPassar(String destino){
-        this.destinoPassar = destino;
-    }
-    public int getParcelas(){
-        return parcelas;
-    }
-    public void setParcelas(int parcela){
-        this.parcelas = parcela;
-    }
-    public Double getValorTotal(){
-        return valorTotal;
-    }
-    public void setValorTotal (Double valor){
-        this.valorTotal = valor;
-    }
-
-    public String getidPassar(){
+    public int getid(){
         return idPassar;
     }
-
-    public void setIdPassar(String valor){
+    public void setIdPassar(int valor){
         idPassar = valor;
     }
 
@@ -60,6 +29,14 @@ public class Pacote extends Viagem {
 
     public void setTaxaDesconto(double taxaDesconto) {
         this.taxaDesconto = taxaDesconto;
+    }
+
+    public Viagem getViagemPacote() {
+        return viagemPacote;
+    }
+
+    public void setViagemPacote(Viagem viagemPacote) {
+        this.viagemPacote = viagemPacote;
     }
 
     public int getQtdClientes() {

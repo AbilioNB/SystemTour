@@ -1,6 +1,9 @@
 package view;
 
+import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import model.persistence.ClienteDAO;
 
 public class ClienteView {
 

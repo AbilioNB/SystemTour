@@ -1,6 +1,7 @@
 package sample;
 
-import br.ufrpe.systemtour.controllers.ScreensController;
+import controllers.AdministradorController;
+import controllers.ScreensController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -57,10 +58,6 @@ public class Main extends Application {
                 break;
             case "Vender":
                 stage.setScene(ScreensController.pegarCena("Vender"));
-                stage.show();
-                break;
-            case "Pagamento":
-                stage.setScene(ScreensController.pegarCena("Pagamento"));
                 stage.show();
                 break;
         }
