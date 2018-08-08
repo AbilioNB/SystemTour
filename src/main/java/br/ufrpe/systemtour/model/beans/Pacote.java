@@ -1,7 +1,15 @@
 package br.ufrpe.systemtour.model.beans;
 
-public class Pacote extends Viagem {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Pacote extends Viagem {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer bancoId;
     private String destinoPassar;
     private String cpfTitular;
     private double taxaDesconto;
