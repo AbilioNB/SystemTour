@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="278.0" prefWidth="447.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.systemtour.controllers.EditarViagemController">
+    <children>
+        <TabPane prefHeight="294.0" prefWidth="551.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Adicionar Viagem">
+                    <content>
+                        <AnchorPane fx:id="valorUnitarioViagem" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="14.0" layoutY="24.0" text="Origem:" textOverrun="ELLIPSIS">
+                                    <graphic>
+                                        <TextField fx:id="origemViagem" prefWidth="200.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="72.0" text="Destino:">
+                                    <graphic>
+                                        <TextField fx:id="destinoViagem" prefWidth="200.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="118.0" prefHeight="25.0" prefWidth="252.0" text="Descrição:">
+                                    <graphic>
+                                        <TextField fx:id="descricaoViagem" prefHeight="25.0" prefWidth="193.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="161.0" prefHeight="25.0" prefWidth="250.0" text="Vagas Disponíveis:">
+                                    <graphic>
+                                        <TextField fx:id="vagasViagem" prefHeight="25.0" prefWidth="146.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="24.0" text="Data de Partida:">
+                                    <graphic>
+                                        <TextField fx:id="dataPartidaViagem" prefWidth="166.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="282.0" layoutY="72.0" text="Data de Chegada:">
+                                    <graphic>
+                                        <TextField fx:id="dataChegadaViagem" prefHeight="25.0" prefWidth="155.0" />
+                                    </graphic>
+                                </Label>
+                                <Label contentDisplay="RIGHT" layoutX="281.0" layoutY="118.0" prefHeight="25.0" prefWidth="257.0" text="Valor Unitário:">
+                                    <graphic>
+                                        <TextField fx:id="unitarioViagem" prefHeight="25.0" prefWidth="177.0" />
+                                    </graphic>
+                                </Label>
+                                <Label layoutX="284.0" layoutY="161.0" nodeOrientation="RIGHT_TO_LEFT" text="Total de Despesas:">
+                                    <graphic>
+                                        <TextField />
+                                    </graphic>
+                                </Label>
+                                <Button layoutX="14.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonVoltar" prefHeight="32.0" prefWidth="75.0" text="Menu" />
+                                <Button layoutX="454.0" layoutY="219.0" mnemonicParsing="false" onAction="#buttonEditar" prefHeight="32.0" prefWidth="75.0" text="Editar" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+
+</AnchorPane>

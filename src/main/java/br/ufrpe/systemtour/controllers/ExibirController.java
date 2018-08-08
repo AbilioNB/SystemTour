@@ -1,5 +1,6 @@
 package br.ufrpe.systemtour.controllers;
 
+import br.ufrpe.systemtour.business.DaoBusiness;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -83,7 +84,7 @@ public class ExibirController implements Initializable {
     protected void buttonExcluir (){
         ClienteExibir cliente = cTable.getSelectionModel().getSelectedItem();
         if (cliente != null){
-            ClienteDAO.removerCliente(cpfPassar);
+            DaoBusiness.apagarCliente(cpfPassar);
             ClienteView.mensagemRemover(cliente.getNomeEx());
             cTable.getItems().remove(cliente);
         }
@@ -93,9 +94,7 @@ public class ExibirController implements Initializable {
         Main.trocaTela("Entrar");
     }
     @FXML
-    protected void buttonEditar (javafx.event.ActionEvent actionEvent){
-        System.out.println(getNomePassar());
-        System.out.println(getTelPassar());
-        System.out.println(getCpfPassar());
+    protected void buttonEditar (javafx.event.ActionEvent actionEvent) throws IOException {
+        Main.trocaTela("EditarCliente");
     }
 }

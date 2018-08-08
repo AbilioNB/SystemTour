@@ -1,8 +1,10 @@
 package br.ufrpe.systemtour.controllers;
 
+import br.ufrpe.systemtour.business.DaoBusiness;
 import br.ufrpe.systemtour.business.ViagemBusiness;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -107,7 +109,7 @@ public class ViagemController implements Initializable {
         ViagemExibir viagem = vTable.getSelectionModel().getSelectedItem();
         if (viagem != null){
             vTable.getItems().remove(viagem);
-            ViagensDAO.removerViagem(idPassar);
+            DaoBusiness.apagarViagem(idPassar);
             ViagemView.mensagemRemover(viagem.getDestinoEx());
         }
     }
@@ -161,5 +163,9 @@ public class ViagemController implements Initializable {
     @FXML
     protected void buttonVoltar(javafx.event.ActionEvent actionEvent) throws IOException {
         Main.trocaTela("Entrar");
+    }
+
+    public void buttonEditar(ActionEvent actionEvent) throws IOException {
+        Main.trocaTela("EditarViagem");
     }
 }

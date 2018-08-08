@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="211.0" prefWidth="337.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.systemtour.controllers.EditarClienteController">
+    <children>
+        <Pane layoutY="-1.0" prefHeight="222.0" prefWidth="380.0">
+            <children>
+                <TabPane prefHeight="222.0" prefWidth="380.0" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                        <Tab text="Editar Cliente">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="242.0" prefWidth="346.0">
+                                    <children>
+                                        <Pane prefHeight="197.0" prefWidth="380.0">
+                                            <children>
+                                                <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="50.0" prefHeight="25.0" prefWidth="210.0" text="Nome:">
+                                                    <graphic>
+                                                        <TextField fx:id="nomeCadastro" prefHeight="25.0" prefWidth="119.0" />
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" layoutX="14.0" layoutY="94.0" prefHeight="25.0" prefWidth="188.0" text="Email:">
+                                                    <graphic>
+                                                        <TextField fx:id="emailCadastro" prefHeight="25.0" prefWidth="125.0" />
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" layoutX="182.0" layoutY="50.0" prefHeight="25.0" prefWidth="195.0" text="Nascimento:">
+                                                    <graphic>
+                                                        <TextField fx:id="dataCadastro" prefHeight="25.0" prefWidth="119.0" />
+                                                    </graphic>
+                                                </Label>
+                                                <Label contentDisplay="RIGHT" layoutX="184.0" layoutY="94.0" prefHeight="25.0" prefWidth="192.0" text="Telefone:">
+                                                    <graphic>
+                                                        <TextField fx:id="telefoneCadastro" prefHeight="25.0" prefWidth="135.0" />
+                                                    </graphic>
+                                                </Label>
+                                                <Button layoutX="313.0" layoutY="158.0" mnemonicParsing="false" onAction="#cadastrarButton" text="Editar" />
+                                                <Button layoutX="14.0" layoutY="158.0" mnemonicParsing="false" onAction="#buttonVoltar" text="Voltar" />
+                                            </children>
+                                        </Pane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                    </tabs>
+                </TabPane>
+            </children></Pane>
+    </children>
+
+</AnchorPane>
