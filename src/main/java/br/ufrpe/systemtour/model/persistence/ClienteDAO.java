@@ -57,8 +57,21 @@ public class ClienteDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
+        //Fazer uma nova leitura do banco
+        HashMap<String,Cliente> bufHash = new HashMap();
+        List<Cliente> bufferList = em.createQuery("from Cliente ",Cliente.class).getResultList();
+        for (Cliente buffer :bufferList){
+            bufHash.put(buffer.getCpf(),buffer);
+        }
+        //Testa se ja tem da merge se n salva
         for (Cliente buffer:repositorioCliente.values()) {
-            em.persist(buffer);
+            if(bufHash.containsKey(buffer.getCpf())){
+                Cliente buf2 = bufHash.get(buffer.getCpf());
+                buffer.setBancoId(buf2.getBancoId());
+                em.merge(buffer);
+            }else {
+                em.persist(buffer);
+            }
         }
         em.getTransaction().commit();
         em.close();

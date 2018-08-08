@@ -43,8 +43,22 @@ public class ViagensDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
+
+        //Fazer uma nova leitura do banco
+        HashMap<String,Viagem> bufHash = new HashMap();
+        List<Viagem> bufferList = em.createQuery("from Viagem ",Viagem.class).getResultList();
+        for (Viagem buffer :bufferList){
+            bufHash.put(buffer.getId(),buffer);
+        }
+        //Testa se ja tem da merge, se n salva
         for (Viagem buffer:repositorioViagem.values()) {
-            em.persist(buffer);
+            if(bufHash.containsKey(buffer.getId())){
+                Viagem buf2 = bufHash.get(buffer.getId());
+                buffer.setBancoId(buf2.getBancoId());
+                em.merge(buffer);
+            }else {
+                em.persist(buffer);
+            }
         }
         em.getTransaction().commit();
         em.close();

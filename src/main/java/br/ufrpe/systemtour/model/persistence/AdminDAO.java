@@ -27,8 +27,21 @@ public class AdminDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
+        //Fazer uma nova leitura do banco
+        HashMap<String,Administrador> bufHash = new HashMap();
+        List<Administrador> bufferList = em.createQuery("from Administrador ",Administrador.class).getResultList();
+        for (Administrador buffer :bufferList){
+            bufHash.put(buffer.getCpf(),buffer);
+        }
+        //Testa se ja tem da merge se n salva
         for (Administrador buffer:repositorioADM.values()) {
-            em.persist(buffer);
+            if(bufHash.containsKey(buffer.getCpf())){
+                Administrador buf2 = bufHash.get(buffer.getCpf());
+                buffer.setBancoId(buf2.getBancoId());
+                em.merge(buffer);
+            }else {
+                em.persist(buffer);
+            }
         }
         em.getTransaction().commit();
         em.close();

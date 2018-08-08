@@ -38,9 +38,22 @@ public class PagamentoDAO {
             EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
             EntityManager em = emf.createEntityManager();
             em.getTransaction().begin();
-            for (Pagamento buffer:repositorioPagamento.values()) {
+        //Fazer uma nova leitura do banco
+        HashMap<String,Pagamento> bufHash = new HashMap();
+        List<Pagamento> bufferList = em.createQuery("from Pagamento ",Pagamento.class).getResultList();
+        for (Pagamento buffer :bufferList){
+            bufHash.put(buffer.getId(),buffer);
+        }
+        //Testa se ja tem da merge se n salva
+        for (Pagamento  buffer:repositorioPagamento.values()) {
+            if(bufHash.containsKey(buffer.getId())){
+                Pagamento buf2 = bufHash.get(buffer.getId());
+               buffer.setBancoId(buf2.getBancoId());
+                em.merge(buffer);
+            }else {
                 em.persist(buffer);
             }
+        }
             em.getTransaction().commit();
             em.close();
             emf.close();

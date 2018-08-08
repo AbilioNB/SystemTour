@@ -41,9 +41,23 @@ public class PacoteDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
-        for (Pacote buffer:repositorioPacote.values()) {
-            em.persist(buffer);
+        //Fazer uma nova leitura do banco
+        HashMap<String,Pacote> bufHash = new HashMap();
+        List<Pacote> bufferList = em.createQuery("from Pessoa ",Pacote.class).getResultList();
+        for (Pacote buffer :bufferList){
+            bufHash.put(buffer.getId(),buffer);
         }
+        //Testa se ja tem da merge se n salva
+        for (Pacote buffer:repositorioPacote.values()) {
+            if(bufHash.containsKey(buffer.getId())){
+                Pacote buf2 = bufHash.get(buffer.getId());
+                buffer.setBancoId(buf2.getBancoId());
+                em.merge(buffer);
+            }else {
+                em.persist(buffer);
+            }
+        }
+
         em.getTransaction().commit();
         em.close();
         emf.close();

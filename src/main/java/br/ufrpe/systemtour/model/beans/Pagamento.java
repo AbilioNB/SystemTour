@@ -13,6 +13,14 @@ public class Pagamento {
     private String dataDoRecebimento;
     private String id;
 
+    public Integer getBancoId() {
+        return bancoId;
+    }
+
+    public void setBancoId(Integer bancoId) {
+        this.bancoId = bancoId;
+    }
+
     public String getCpfDoPagante() {
         return cpfDoPagante;
     }

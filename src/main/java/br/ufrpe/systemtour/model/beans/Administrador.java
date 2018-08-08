@@ -14,6 +14,14 @@ public class Administrador extends Pessoa {
     private String senha;
     private int id;
 
+    public Integer getBancoId() {
+        return bancoId;
+    }
+
+    public void setBancoId(Integer bancoId) {
+        this.bancoId = bancoId;
+    }
+
     public String getLogin() {
         return login;
     }
