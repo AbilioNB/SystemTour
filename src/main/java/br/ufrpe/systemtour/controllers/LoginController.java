@@ -24,7 +24,7 @@ public class LoginController {
 
         try{
             ab.validarRoot(loginroot, senharoot);
-            ab.chamarHash();
+            //ab.chamarHash();
             Main.trocaTela("Entrar");
         }catch (NullPointerException e){
             av.mensagemErroLogin();
