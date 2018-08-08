@@ -39,6 +39,7 @@ public class ViagemBusiness {
             validarOrigemDestino(viagem);
             viagem.setAtivo(1);
             ViagensDAO.salvarViagem(viagem);
+            ViagensDAO.putBd();
 
         }catch (NullPointerException e){
             vv.mensagemErroData();

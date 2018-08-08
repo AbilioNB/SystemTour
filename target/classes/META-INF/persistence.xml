@@ -4,11 +4,10 @@
     <!-- Implementação do JPA -->
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <!-- Lista de entidades -->
-    <!--<class>beans.Pessoa</class>-->
-    <!--<class>beans.Pacote</class>-->
-    <!--<class>beans.Cliente</class>-->
-    <!--<class>beans.Viagem</class>-->
-    <!--<class>beans.Administrador</class>-->
+    <class>br.ufrpe.systemtour.model.beans.Administrador</class>
+    <class>br.ufrpe.systemtour.model.beans.Cliente</class>
+    <class>br.ufrpe.systemtour.model.beans.Pessoa</class>
+    <class>br.ufrpe.systemtour.model.beans.Pacote</class>
     <class>br.ufrpe.systemtour.model.beans.Viagem</class>
     <properties>
       <!-- Propriedades JDBC -->

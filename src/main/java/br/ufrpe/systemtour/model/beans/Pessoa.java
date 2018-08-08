@@ -1,19 +1,20 @@
 package br.ufrpe.systemtour.model.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.Inheritance;
-import javax.persistence.InheritanceType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class Pessoa {
+
+
     private String nome;
     private String email;
     private String cpf;
     private int idade;
     private String data;
     private String telefone;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Integer bancoId;
 
 
