@@ -43,7 +43,7 @@ public class PacoteDAO {
         em.getTransaction().begin();
         //Fazer uma nova leitura do banco
         HashMap<String,Pacote> bufHash = new HashMap();
-        List<Pacote> bufferList = em.createQuery("from Pessoa ",Pacote.class).getResultList();
+        List<Pacote> bufferList = em.createQuery("from Pacote ",Pacote.class).getResultList();
         for (Pacote buffer :bufferList){
             bufHash.put(buffer.getId(),buffer);
         }

@@ -3,10 +3,11 @@ package br.ufrpe.systemtour.model.beans;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Viagem {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+
     private Integer bancoId;
     private String vagas;
     private String destino;
