@@ -2,7 +2,11 @@ package br.ufrpe.systemtour.model.persistence;
 
 import br.ufrpe.systemtour.model.beans.Administrador;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.HashMap;
+import java.util.List;
 
 public class AdminDAO {
 
@@ -14,7 +18,32 @@ public class AdminDAO {
     }
 
     public static void removerADM(Administrador adm){   
+        repositorioADM.remove(adm.getCpf());
+    }
+    //Parte do Banco
 
+    //Gravando
+    public static void setHash(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        for (Administrador buffer:repositorioADM.values()) {
+            em.persist(buffer);
+        }
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+    }
+    //Recuperando
+    public void recuperarHash(){
 
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        List<Administrador> bufferList = em.createQuery("from Administrador ",Administrador.class).getResultList();
+        for (Administrador buffer :bufferList){
+           repositorioADM.put(buffer.getCpf(),buffer);
+        }
+        em.close();
+        emf.close();
     }
 }

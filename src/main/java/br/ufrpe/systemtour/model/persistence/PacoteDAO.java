@@ -2,6 +2,9 @@ package br.ufrpe.systemtour.model.persistence;
 
 import br.ufrpe.systemtour.model.beans.Pacote;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,5 +35,28 @@ public class PacoteDAO {
                 repositorioPacote.remove(buffer.getId());
             }
         }
+    }
+    //Parte do Banco
+    public static void setHash(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        for (Pacote buffer:repositorioPacote.values()) {
+            em.persist(buffer);
+        }
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+
+    }
+    public static void getHash(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        List<Pacote> bufferList = em.createQuery("from Pacote ",Pacote.class).getResultList();
+        for (Pacote buffer :bufferList){
+            repositorioPacote.put(buffer.getId(),buffer);
+        }
+        em.close();
+        emf.close();
     }
 }

@@ -2,6 +2,9 @@ package br.ufrpe.systemtour.model.persistence;
 
 import br.ufrpe.systemtour.model.beans.Cliente;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.util.*;
 
 public class ClienteDAO {
@@ -47,5 +50,29 @@ public class ClienteDAO {
     public static Cliente buscarCliente( String cpf){
         return repositorioCliente.get(cpf);
 
+    }
+    //Parte do Banco
+    //Gravar
+    public static void setHash(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        for (Cliente buffer:repositorioCliente.values()) {
+            em.persist(buffer);
+        }
+        em.getTransaction().commit();
+        em.close();
+        emf.close();
+    }
+    //Recuperar
+    public static void getHash(){
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
+        EntityManager em = emf.createEntityManager();
+        List<Cliente> bufferList = em.createQuery("from Cliente ",Cliente.class).getResultList();
+        for (Cliente buffer :bufferList){
+            repositorioCliente.put(buffer.getCpf(),buffer);
+        }
+        em.close();
+        emf.close();
     }
 }

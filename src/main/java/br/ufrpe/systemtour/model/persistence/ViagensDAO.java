@@ -39,7 +39,7 @@ public class ViagensDAO {
 
     //Parte destinada ao banco de dados :
     //Inserindo o Hash no banco
-    public static void putBd(){
+    public static void setHash(){
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
         em.getTransaction().begin();
@@ -51,7 +51,7 @@ public class ViagensDAO {
         emf.close();
     }
     //Recuperando o Hash do Banco
-    public  static void recuperarHash(){
+    public  static void getHash(){
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
