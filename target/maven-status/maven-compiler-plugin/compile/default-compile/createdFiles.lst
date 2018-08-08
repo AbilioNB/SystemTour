@@ -4,6 +4,7 @@ br\ufrpe\systemtour\business\PagarBusiness.class
 br\ufrpe\systemtour\controllers\ExibirController.class
 br\ufrpe\systemtour\model\persistence\ViagensDAO.class
 view\ClienteExibir.class
+br\ufrpe\systemtour\business\AllBusiness.class
 br\ufrpe\systemtour\controllers\LoginController.class
 br\ufrpe\systemtour\model\beans\Viagem.class
 view\AdministradorView.class

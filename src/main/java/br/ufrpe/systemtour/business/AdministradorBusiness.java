@@ -123,11 +123,5 @@ public class AdministradorBusiness {
         }
     }
 
-    public void chamarHash(){
-        AdminDAO.getHash();
-        ClienteDAO.getHash();
-        PacoteDAO.getHash();
-        PagamentoDAO.getHash();
-        ViagensDAO.getHash();
-    }
+
 }

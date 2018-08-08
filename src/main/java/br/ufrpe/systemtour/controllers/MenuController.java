@@ -1,5 +1,6 @@
 package br.ufrpe.systemtour.controllers;
 
+import br.ufrpe.systemtour.business.AllBusiness;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import br.ufrpe.systemtour.sample.Main;
@@ -40,6 +41,8 @@ public class MenuController  {
     @FXML
     protected void closeButtonAction(){
         Stage stage = (Stage) closeButton.getScene().getWindow();
+        AllBusiness all = new AllBusiness();
+        all.gravarHashs();
         stage.close();
     }
 }
