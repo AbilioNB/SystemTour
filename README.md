@@ -1,5 +1,5 @@
 ﻿
-[System Tour]
+[Gerencia Tour 1]
 
 Definição: Baseado em um case real , foi idealizado  um escopo para um programa que visa gerenciar por parte de seus donos um micro-empresa de viagem .
 O <b>Gerencia Tour</b> trata-se de um sistema que será utilizado pelos administradores da empresa onde eles poderão informatizar toda parte de controle de ativos , como os clientes , quanto a parte financeira. Ainda visando destaque em demais plataformas existentes, será implementado uma função que baseada nas recentes escolha  de destinos/pacotes dos clientes possam ser cotados para as viagens, assim sempre formando uma lista de possíveis clientes para aquele destino.
@@ -44,16 +44,24 @@ Cliente:
   
    Arquitetura Parcial{V1}:
   ![diagrama em branco](https://user-images.githubusercontent.com/21352623/42009151-6e94a73c-7a5f-11e8-9d5e-6d07409be0b0.png)
-  <br>  
+  <br>
+  
+  
+ 
+  
 Versão JAVA: 
 	<br> Java 8
 <br>Dependências: 
 	<ul>
 		<li>JPA</li>
 		<li>Java FX</li>
-		<li> Mavenl</li>
+		<li> Banco de dados Mysql</li>
 	</ul>
-
+Para criar o Banco :
+	1- create database stdatabase;
+	2- Depois é só rodar o programa
+	3- Fazer o chamado da função de cadastro com banco 
+	4- Executar o programa.
 
 Time de Desenvolvedores : 
 	<ul>
@@ -63,9 +71,3 @@ Time de Desenvolvedores :
 	</ul>
 Orientador : 
 <br>Andre Camara
-
-Como executar o programa : 
-<ol>
-	<li> Baixe e Import o banco de dados : stdatabase.sql</li>
-	<li>Inicie o programa</li>
-</ol>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.systemtour.controllers.MenuController">
+   <children>
+      <Pane prefHeight="267.0" prefWidth="401.0">
+         <children>
+            <Button layoutX="79.0" layoutY="79.0" mnemonicParsing="false" onAction="#buttonAction" prefHeight="32.0" prefWidth="80.0" text="Cadastrar Cliente">
+               <font>
+                  <Font size="9.0" />
+               </font></Button>
+            <Label layoutX="161.0" layoutY="22.0" prefHeight="49.0" prefWidth="80.0" text="Menu">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label layoutY="241.0" prefHeight="25.0" prefWidth="58.0" text="ALPHA 0.2" textFill="#22fa00" />
+            <Button layoutX="79.0" layoutY="117.0" mnemonicParsing="false" onAction="#buttonExibir" prefHeight="32.0" prefWidth="80.0" text="Exibir Clientes">
+               <font>
+                  <Font size="9.0" />
+               </font></Button>
+            <Button layoutX="79.0" layoutY="157.0" mnemonicParsing="false" onAction="#buttonADM" prefHeight="32.0" prefWidth="80.0" text="Casdastrar ADM">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button layoutX="235.0" layoutY="79.0" mnemonicParsing="false" onAction="#buttonCadViagem" prefHeight="32.0" prefWidth="80.0" text="Viagens" />
+            <Button layoutX="235.0" layoutY="118.0" mnemonicParsing="false" onAction="#buttonPagar" prefHeight="32.0" prefWidth="80.0" text="Pagamento" />
+            <Button layoutX="235.0" layoutY="161.0" mnemonicParsing="false" onAction="#buttonFinanceiro" prefHeight="32.0" prefWidth="80.0" text="Financeiro" />
+            <Button fx:id="closeButton" layoutX="357.0" layoutY="229.0" mnemonicParsing="false" onAction="#closeButtonAction" prefHeight="15.0" prefWidth="36.0" text="Sair" />
+         </children>
+      </Pane>
+   </children>
+</Pane>
