@@ -1,15 +1,11 @@
 package br.ufrpe.systemtour.model.beans;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@PrimaryKeyJoinColumn(name = "bancoID")
 public class Pacote extends Viagem {
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Integer bancoId;
+
     private String destinoPassar;
     private String cpfTitular;
     private double taxaDesconto;
@@ -19,15 +15,6 @@ public class Pacote extends Viagem {
     private double valorParcelado;
     private Double valorTotal;
 
-    @Override
-    public Integer getBancoId() {
-        return bancoId;
-    }
-
-    @Override
-    public void setBancoId(Integer bancoId) {
-        this.bancoId = bancoId;
-    }
 
     public String getIdPassar() {
         return idPassar;

@@ -3,7 +3,7 @@ package br.ufrpe.systemtour.model.beans;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Pessoa {
 
 
@@ -14,9 +14,16 @@ public class Pessoa {
     private String data;
     private String telefone;
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer bancoId;
 
+    public Integer getBancoId() {
+        return bancoId;
+    }
+
+    public void setBancoId(Integer bancoId) {
+        this.bancoId = bancoId;
+    }
 
     public String getData() {
         return data;
