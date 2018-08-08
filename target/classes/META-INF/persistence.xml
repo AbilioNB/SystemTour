@@ -9,6 +9,7 @@
     <!--<class>beans.Cliente</class>-->
     <!--<class>beans.Viagem</class>-->
     <!--<class>beans.Administrador</class>-->
+    <class>br.ufrpe.systemtour.model.beans.Viagem</class>
     <properties>
       <!-- Propriedades JDBC -->
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>

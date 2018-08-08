@@ -1,6 +1,15 @@
 package br.ufrpe.systemtour.model.beans;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Administrador extends Pessoa {
+   @Id
+   @GeneratedValue(strategy= GenerationType.AUTO)
+   private Integer bancoId;
     private String login;
     private String senha;
     private int id;

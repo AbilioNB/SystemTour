@@ -1,6 +1,12 @@
 package br.ufrpe.systemtour.model.beans;
 
+import javax.persistence.*;
+
+@Entity
 public class Pagamento {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer bancoId;
 
     private String cpfDoPagante;
     private double valorRecebido;

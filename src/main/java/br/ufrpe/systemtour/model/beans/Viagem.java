@@ -23,6 +23,14 @@ public class Viagem {
     private Double despesa;
     private int pessoas;
 
+    public Integer getBancoId() {
+        return bancoId;
+    }
+
+    public void setBancoId(Integer bancoId) {
+        this.bancoId = bancoId;
+    }
+
     public String getVagas() {
         return vagas;
     }

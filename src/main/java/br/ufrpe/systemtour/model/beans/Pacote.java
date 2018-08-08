@@ -19,6 +19,20 @@ public class Pacote extends Viagem {
     private double valorParcelado;
     private Double valorTotal;
 
+    @Override
+    public Integer getBancoId() {
+        return bancoId;
+    }
+
+    @Override
+    public void setBancoId(Integer bancoId) {
+        this.bancoId = bancoId;
+    }
+
+    public String getIdPassar() {
+        return idPassar;
+    }
+
     public double getValorParcelado() {
         return valorParcelado;
     }
