@@ -11,7 +11,7 @@ import java.util.List;
 
 public class ViagensDAO {
 
-    private static HashMap<String,Viagem> repositorioViagem=new HashMap ();
+    private static HashMap<String,Viagem> repositorioViagem = new HashMap ();
     private static ViagensDAO instance = new ViagensDAO();
 
     public static void salvarViagem(Viagem viagem){

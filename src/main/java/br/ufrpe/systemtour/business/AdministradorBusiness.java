@@ -1,7 +1,7 @@
 package br.ufrpe.systemtour.business;
 
 import br.ufrpe.systemtour.model.beans.Administrador;
-import br.ufrpe.systemtour.model.persistence.AdminDAO;
+import br.ufrpe.systemtour.model.persistence.*;
 import view.AdministradorView;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -121,5 +121,13 @@ public class AdministradorBusiness {
         }catch (NullPointerException e){
             av.mensagemErro();
         }
+    }
+
+    public void chamarHash(){
+        AdminDAO.getHash();
+        ClienteDAO.getHash();
+        PacoteDAO.getHash();
+        PagamentoDAO.getHash();
+        ViagensDAO.getHash();
     }
 }

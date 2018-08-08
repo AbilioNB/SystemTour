@@ -35,7 +35,7 @@ public class AdminDAO {
         emf.close();
     }
     //Recuperando
-    public void recuperarHash(){
+    public static void getHash(){
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("persistarq");
         EntityManager em = emf.createEntityManager();
